@@ -1,0 +1,214 @@
+# Raw trade strings -> the 17 gewerk codes of backend/scripts/data/label_object.json.
+#
+# Resolution order, first hit wins:
+#   1. unresolved     - placeholders that carry no trade signal at all
+#   2. exact          - normalized full-string matches (lower case, no umlauts)
+#   3. keywords       - ordered regex over the trade string, then the contractor,
+#                       then the task name, then the WBS ancestors
+#   4. bkp            - Swiss BKP chapter of the row
+#   5. weak_keywords  - words that name a phase or a department rather than a
+#                       trade, checked last over the same fields
+#
+# The weak tier exists because several schedules put "Ausbau-Turm" or
+# "Malerarbeiten Rohbau" in their trade column. Read greedily, "Ausbau" makes
+# every electrician a finisher and "Rohbau" makes every painter a mason.
+#
+# Anything still unmatched is left empty for the cache and LLM fallback, so the
+# coverage report stays honest.
+
+unresolved:
+  - "-"
+  - "?"
+  - "??"
+  - "???"
+  - "0"
+  - "x"
+  - "y"
+  - "n/a"
+  - "na"
+  - "tba"
+  - "tbd"
+  - "div"
+  - "divers"
+  - "alle"
+  - "offen"
+  - "arge"
+  - "gp"
+  - "gu"
+  - "ub"
+  - "bm"
+  - "c02"
+  - "nan"
+  # Area and section labels that several schedules keep in their trade column.
+  - "ausbau"
+  - "ausbau-turm"
+  - "ausbau turm"
+  - "ausbau-annex"
+  - "ausbau annex"
+  - "gebaeude allg."
+  - "gebaeude allg"
+  - "alle bereiche"
+  - "alle geschosse"
+  - "alle zonen"
+
+exact:
+  # Abbreviations and package codes that no keyword rule can reach.
+  ga02: AUTO
+  ga: AUTO
+  "ga hlkkse": AUTO
+  mrwa: LF
+  sta: KO
+  bl: OTH
+  log: OTH
+  gt: OTH
+  ibs: OTH
+  ibn: OTH
+  mta: EQUIP
+  nea: EL
+  it: EL
+  emv: EL
+  msr: AUTO
+  wdvs: ENV
+  epoxy: INT
+  estrich: INT
+  move: OTH
+  umzug: OTH
+  bauherr: OTH
+  freigabe: OTH
+  meilenstein: OTH
+  logistik: OTH
+  gewerkeuebergreifend: OTH
+  "gewerkeübergreifend": OTH
+  # Combined HLKS packages sit in BKP chapter 250, the sanitary chapter.
+  hlks: SN
+  "250 hlks": SN
+  # pRED department labels with no package to sharpen them.
+  bau: KO
+  tga: OTH
+  emsr: AUTO
+  labor: SPEC
+
+contractor:
+  schindler: TRANS
+  "schindler ag": TRANS
+  bernaroof: ENV
+
+# Ordered: the first pattern that matches wins, so combined and specific terms
+# come before the single words they contain.
+keywords:
+  # --- combined trade names, before their parts -------------------------
+  - { match: "heizung[ /-]*k(ä|ae)lte|w(ä|ae)rme[ /-]*k(ä|ae)lte|heiz[- ]*/?[ ]*k(ü|ue)hldecken", gewerk: HZ }
+  - { match: "rauch[ -]*w(ä|ae)rmeabzug|\\brwa\\b|\\brda\\b|entrauchung", gewerk: LF }
+  - { match: "kabeltrasse|schaltwartenboden|stromschiene|potentialausgleich", gewerk: EL }
+  - { match: "steigleitung|wandhydrant", gewerk: SPR }
+
+  # --- Konstruktion -----------------------------------------------------
+  # "rohbau" is deliberately absent: it is a phase word and lives in the weak
+  # tier, so "Malerarbeiten Rohbau" resolves as painting, not masonry.
+  - { match: "baumeister|betonkosmetik|maurer|mauerwerk|statik|stahlbau|spezialfundation|betonarbeiten|schalung|bewehrung|kernbohrung|abbruch|r(ü|ue)ckbau|abriss|schadstoff|treppenhaus", gewerk: KO }
+
+  # --- Gebäudehülle -----------------------------------------------------
+  - { match: "fassade|fenster|verglasung.*aussen|bedachung|\\bdach\\b|dachaufbau|flachdach|spengler|klempner|abdichtung|attika|sonnenschutz|storen|jalousie|wdvs|fassadenputz|(ä|ae)ussere maler|geb(ä|ae)udeh(ü|ue)lle|holzbau|zimmermann|pv-fassade", gewerk: ENV }
+
+  # --- Ausbau -----------------------------------------------------------
+  - { match: "gipser|nassputz|trockenbau|gipskarton|\\bputzer\\b|verputz", gewerk: INT }
+  - { match: "maler|anstrich|tapezier|d(ü|ue)nnspachtel|bodenbeschichtung|epoxy", gewerk: INT }
+  - { match: "bodenbel(a|ä)|unterlagsboden|estrich|parkett|teppich|kautschuk|naturstein|hartbeton|fliesen|plattenarbeiten|linoleum|\\bpvc\\b|doppelboden|hohlraumboden|bodenleger|plattenleger|\\bb(ö|oe)den\\b|\\bboden\\b", gewerk: INT }
+  - { match: "schreiner|innent(ü|ue)r|\\bt(ü|ue)r(en)?\\b|zarge|schiebet(ü|ue)r|faltwand|elementwand|trennwand|systemtrennw|glaswand|glastrennw|kernverkleidung|wandbekleidung|wandbel(a|ä)|innere verglasung|spezialverglasung|metallabschl(ü|ue)ss|metallbau|schlosser|gel(ä|ae)nder|handlauf|vorh(ä|ae)nge|\\bwände\\b|\\bwand\\b", gewerk: INT }
+  - { match: "decke.*(metall|gips|holz|akustik)|systemk(ü|ue)hldecke|lamellenk(ü|ue)hldecke|brandschutzdecke|deckenverkleid|deckenbauer|abgeh(ä|ae)ngte decke|\\bdecken?\\b|akustik", gewerk: INT }
+
+  # --- Gebäudetechnik ---------------------------------------------------
+  - { match: "sanit(ä|ae)r|fertignasszelle|entw(ä|ae)sserung|abwasser|apparate", gewerk: SN }
+  - { match: "heizung|\\bw(ä|ae)rme\\b|heizk(ö|oe)rper|\\bhz\\b", gewerk: HZ }
+  - { match: "k(ä|ae)lte|k(ü|ue)hl|refrigerat|klimak(ä|ae)lte", gewerk: KT }
+  - { match: "l(ü|ue)ftung|klima|\\brlt\\b|monobl(o|ö)ck|luftkanal", gewerk: LF }
+  - { match: "elektro|starkstrom|schwachstrom|beleuchtung|leuchte|blitzschutz|erdung|notlicht|\\busv\\b|notstrom|\\bict\\b|\\blwl\\b|verkabelung|kabel|\\bav\\b|photovoltaik|inhouse mobile", gewerk: EL }
+  - { match: "sprinkler|gasl(ö|oe)sch|l(ö|oe)schrohl|l(ö|oe)schrohr|l(ö|oe)schanlage|brandl(ö|oe)sch", gewerk: SPR }
+  - { match: "automation|geb(ä|ae)udeautomation|\\bmsr\\b|\\bgls\\b|regeltechnik|leittechnik", gewerk: AUTO }
+  - { match: "\\bbma\\b|brandmelde|security|zutritt|schliessanlage|videoüberwachung|einbruch|brandschott|abschottung|brandschutzabschl|brandschutzvorhang|fireshield|\\bbrandschutz\\b", gewerk: SEC }
+  - { match: "med(izinal)?[ -]*gas|\\bgas\\b|druckluft|\\bfl(ü|ue)ssiggas\\b", gewerk: GAS }
+  - { match: "medienversorgung|reinmedien|reinstwasser|osmose|labormedien|prozessmedien|\\böltank\\b|spezialmedien", gewerk: SPEC }
+  - { match: "aufzug|aufz(ü|ue)ge|\\blift\\b|rolltreppe|laufkatze|rohrpost|f(ö|oe)rderanlage|transportanlage|\\bbmu\\b", gewerk: TRANS }
+
+  # --- Ausstattung, Umgebung, Rest --------------------------------------
+  - { match: "k(ü|ue)che|kücheneinrichtung|labormöbel|labormoebel|abz(ü|ue)ge|autoklav|compound store|garderobenschrank|m(ö|oe)bel|einrichtung|med technik|medizinaltechnik|betriebseinrichtung|beschilderung|beschriftung|leitsystem|kiosk|\\blabor\\b", gewerk: EQUIP }
+  - { match: "umgebung|tiefbau|erdbau|baugrube|aussenanlage|au(ss|ß)enanlage|werkleitung|kanalisation|strassen|stra(ss|ß)e|garten|belagsarbeiten|velokeller", gewerk: SITE }
+  - { match: "reinigung|ger(ü|ue)st|baustelleneinrichtung|bauleitung|fachbauleitung|honorar|vermess|projektleitung|meilenstein|bauprovisorium|provisorium|trocknung|baustellenkolonne|bauakustik", gewerk: OTH }
+  - { match: "equipment|anlagen (mon|de)tier|ausf(ä|ae)delung", gewerk: EQUIP }
+  - { match: "durchbruch|durchbr(ü|ue)che|schacht (ö|oe)ffnen|kugelstrahlen|haftgrund", gewerk: KO }
+
+# Checked only after every specific rule, every BKP chapter and every ancestor
+# has failed. These words describe a phase, a department or an organizational
+# step, so they identify a trade only when nothing else does.
+weak_keywords:
+  - { match: "\\brohbau\\b", gewerk: KO }
+  - { match: "geb(ä|ae)udetechnik|\\bhlk\\b|\\bhlkk\\b|rohinstallation|endmontage|technikanlagen", gewerk: OTH }
+  - { match: "sign[- ]?off|approval|\\bcpm\\b|review|plausibilit(ä|ae)t|entscheidung|erarbeitung|(ü|ue)berarbeitung|sondernutzung|werk(ü|ue)bergabe|bereitschaft|zwischentermin|inbetriebnahme|planung", gewerk: OTH }
+  - { match: "\\bausbau\\b|innenausbau|grundausbau|endausbau", gewerk: INT }
+  - { match: "\\bbau\\b", gewerk: OTH }
+
+# Swiss BKP chapter -> gewerk. Matched on the longest numeric prefix, so
+# "281.6" resolves through "281" and "250.01" through "250". Only chapters with
+# an unambiguous trade are listed; the rest fall through unresolved.
+bkp:
+  "112": KO
+  "113": KO
+  "114": SITE
+  "117": SITE
+  "130": OTH
+  "131": OTH
+  "153": OTH
+  "172": OTH
+  "200": KO
+  "201": KO
+  "211": KO
+  "213": SITE
+  "214": KO
+  "215": ENV
+  "221": ENV
+  "222": ENV
+  "223": EL
+  "224": ENV
+  "225": ENV
+  "226": ENV
+  "227": ENV
+  "228": ENV
+  "230": EL
+  "231": EL
+  "232": EL
+  "233": EL
+  "235": EL
+  "236": EL
+  "237": EL
+  "239": EL
+  "241": HZ
+  "242": HZ
+  "243": HZ
+  "244": LF
+  "245": KT
+  "246": LF
+  "247": KT
+  "248": HZ
+  "250": SN
+  "252": SN
+  "254": SN
+  "258": EQUIP
+  "261": TRANS
+  "262": TRANS
+  "265": TRANS
+  "271": INT
+  "272": INT
+  "273": INT
+  "274": INT
+  "275": SEC
+  "276": INT
+  "277": INT
+  "281": INT
+  "282": INT
+  "283": INT
+  "285": INT
+  "287": OTH
+  "291": OTH
+  "294": OTH
+  "298": OTH
+  "299": OTH

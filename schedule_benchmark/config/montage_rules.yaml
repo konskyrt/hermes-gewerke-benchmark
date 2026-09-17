@@ -1,0 +1,30 @@
+# Installation depth within a gewerk: Grobmontage / Feinmontage / Endmontage.
+#
+# Applies to every schedule, not only pRED. pRED's E1/E2/E3 install stages map
+# directly onto these three. Everywhere else the same vocabulary is recovered
+# from the task name and its WBS ancestors.
+#
+# Only site-production work is staged. Non-montage activities (planning,
+# procurement, testing, ...) stay empty on this axis.
+
+stages:
+  GROB: { name: "Grobmontage", order: 10 }
+  FEIN: { name: "Feinmontage", order: 20 }
+  END:  { name: "Endmontage",  order: 30 }
+
+# Explicit stage codes some schedules already carry (pRED install_stage).
+explicit:
+  e1: GROB
+  e2: FEIN
+  e3: END
+
+# Ordered; first match wins. Checked against task name, then ancestors.
+keywords:
+  # End first so "Endmontage Feinmontage" style names still land on End.
+  - { match: "endmontage|end[- ]?installation|end[- ]?einbau|finish|finisch|feinmontage\\s+up|up[- ]?installation|definitive beleuchtung|schlussmontage|fertigmauer|abschlussmontage", stage: END }
+  - { match: "feinmontage|feininstallation|fein[- ]?einbau|verteilleitung|verteilung|verteiler|feldger(ä|ae)te|aufputz|\\bap\\b|zweite montage", stage: FEIN }
+  - { match: "grobmontage|rohinstallation|grundinstallation|hauptleitung|steigleitung|steigzone|schachtmontage|trassen|kabeltrasse|erste montage|rohmontage|unterkonstruktion", stage: GROB }
+  # Bare stage codes written into the name (pRED and others).
+  - { match: "\\be3\\b", stage: END }
+  - { match: "\\be2\\b", stage: FEIN }
+  - { match: "\\be1\\b", stage: GROB }

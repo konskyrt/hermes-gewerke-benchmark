@@ -1,0 +1,301 @@
+# Source registry for the cross-schedule benchmark.
+#
+# `root` is resolved first against an absolute path, then against SCHEDULE_BENCHMARK_ROOT,
+# so the folder can move without touching this file.
+#
+# Per source:
+#   project      grouping key - schedules sharing a project land in one dashboard tab
+#   reader       excel | csv_semicolon
+#   parser       optional structural parser applied after the generic column map
+#   columns      canonical field -> source column name
+#   constants    canonical field -> fixed value for every row of this source
+#   duration_unit  how the duration column reads: "mpp" (=> "23 dys?"), "days_int", "de_tage"
+
+root: "C:/Users/KonstantinosKyrtsoni/OneDrive - ambergloglay.com/Documents/Master/all_Projects/classification_systems/schedule classification"
+
+sources:
+  - schedule_id: baeretower
+    label: "Zentrum Bären / BäreTower"
+    project: baeretower
+    file: "BäreTower_Schedule.xlsx"
+    reader: excel
+    duration_unit: mpp
+    columns:
+      task_id: "Unique ID"
+      task_name: "Vorgangsname"
+      duration: "Duration"
+      start: "Start"
+      finish: "Finish"
+      wbs: "WBS"
+      wbs_level: "Outline Level"
+      is_summary_raw: "Summary"
+      is_milestone_raw: "Milestone"
+      floor_raw: "Geschoss"
+      building: "Gebäude"
+      gewerk_raw: "Gewerk"
+      crew_size: "Anzahl Personen"
+      usage: "Nutzung"
+      predecessors: "Predecessors"
+
+  # Same content as BäreTower_Schedule.xlsx with the columns reordered. Kept in the
+  # registry so ingest can assert that, and disabled so it is not counted twice.
+  - schedule_id: bf1
+    label: "Zentrum Bären (BF1 export)"
+    project: baeretower
+    file: "BF1_Schedule.xlsx"
+    reader: excel
+    duration_unit: mpp
+    enabled: false
+    duplicate_of: baeretower
+    columns:
+      task_id: "Unique ID"
+      task_name: "Vorgangsname"
+      duration: "Duration"
+      start: "Start"
+      finish: "Finish"
+      wbs: "WBS"
+      wbs_level: "Outline Level"
+      is_summary_raw: "Summary"
+      is_milestone_raw: "Milestone"
+      floor_raw: "Geschoss"
+      building: "Gebäude"
+      gewerk_raw: "Gewerk"
+      crew_size: "Anzahl Personen"
+      usage: "Nutzung"
+      predecessors: "Predecessors"
+
+  - schedule_id: burckhardt
+    label: "Burckhardt Laborgebäude"
+    project: burckhardt
+    file: "Burckhardt_schedule_new_260226.xlsx"
+    reader: excel
+    duration_unit: mpp
+    columns:
+      task_id: "Unique ID"
+      task_name: "Vorgangsname"
+      duration: "Duration"
+      start: "Start"
+      finish: "Finish"
+      wbs: "WBS"
+      is_summary_raw: "Summary"
+      is_milestone_raw: "Milestone"
+      floor_raw: "Bereich"
+      zone: "Zone"
+      bkp: "BKP"
+      contractor: "Unternehmer 1"
+      contractor_2: "Unternehemr 2"
+      pct_complete: "% Complete"
+      predecessors: "Predecessors"
+
+  - schedule_id: dc30
+    label: "DC30 Rechenzentrum"
+    project: dc30
+    file: "DC30_Schedule_Extract_Konstantinos_03092026_v2.xlsx"
+    reader: excel
+    parser: dc30
+    duration_unit: days_int
+    columns:
+      task_id: "UID"
+      task_name: "Name"
+      duration: "Actual_Duration"
+      start: "Start"
+      finish: "Finish"
+      wbs: "WBS"
+      full_path: "Full_Path"
+      gewerk_raw: "Gewerk"
+      building: "Site_Area"
+      floor_raw: "Floor"
+      zone: "Floor_Zone"
+      pct_complete: "PercentComplete"
+      is_critical_raw: "Critical"
+      description_en: "Description_EN"
+      material_hint: "Inbound_Material"
+      keywords: "Keywords"
+
+  - schedule_id: elp_v6
+    label: "ELP Masterterminplan V6"
+    project: elp
+    file: "ELP_Schedule_V6.xlsx"
+    reader: excel
+    duration_unit: mpp
+    columns:
+      task_id: "Unique ID"
+      task_name: "Vorgangsname"
+      duration: "Duration"
+      start: "Start"
+      finish: "Finish"
+      wbs: "Outline Number"
+      wbs_level: "Outline Level"
+      is_summary_raw: "Summary"
+      is_milestone_raw: "Milestone"
+      is_critical_raw: "Critical"
+      building: "Bereich"
+      floor_raw: "Geschoss"
+      zone: "Zone/Etappierung"
+      gewerk_raw: "Arbeitsgattung"
+      bkp: "BKP"
+      contractor: "Unternehmer"
+      phase_raw: "MS"
+      pct_complete: "% Complete"
+      parent_name: "Task Summary Name"
+      predecessors: "Predecessors"
+
+  - schedule_id: elp_v7
+    label: "ELP Masterterminplan V7"
+    project: elp
+    file: "ELP_Schedule_V7_0526.xlsx"
+    reader: excel
+    duration_unit: mpp
+    columns:
+      task_id: "Unique ID"
+      task_name: "Vorgangsname"
+      duration: "Duration"
+      start: "Start"
+      finish: "Finish"
+      wbs: "Outline Number"
+      wbs_level: "Outline Level"
+      is_summary_raw: "Summary"
+      is_milestone_raw: "Milestone"
+      building: "Bereich"
+      floor_raw: "Geschoss"
+      zone: "Zone/Etappierung"
+      room: "Raum"
+      gewerk_raw: "Arbeitsgattung"
+      bkp: "BKP"
+      contractor: "Unternehmer"
+      phase_raw: "MS"
+      pct_complete: "% Complete"
+      parent_name: "Task Summary Name"
+      predecessors: "Predecessors"
+
+  - schedule_id: frankfurt_four
+    label: "Frankfurt Four RT4"
+    project: frankfurt_four
+    file: "Frankfurt_Four_Schedule.xlsx"
+    reader: excel
+    duration_unit: mpp
+    columns:
+      task_id: "Unique ID"
+      task_name: "Vorgangsname"
+      duration: "Duration"
+      start: "Start"
+      finish: "Finish"
+      wbs: "WBS"
+      is_summary_raw: "Summary"
+      is_milestone_raw: "Milestone"
+      building: "RT"
+      floor_raw: "Geschosse"
+      zone: "Geschosse Bereich"
+      crew_size: "Personaleinsatz"
+      usage: "Mieter"
+      predecessors: "Predecessors"
+
+  - schedule_id: uh1
+    label: "UH1 CS Master Schedule V6"
+    project: uh1
+    file: "UH1_RTP_Angepasst PAP.xlsx"
+    reader: excel
+    sheet: "Vorgangstabelle1"
+    duration_unit: de_tage
+    columns:
+      task_id: "Einmalige_Nr"
+      task_name: "Name"
+      duration: "Dauer"
+      start: "Anfang"
+      finish: "Ende"
+      # No WBS column: Gliederungscode1 is empty on every row, so the hierarchy
+      # is rebuilt from Sammelvorgangsname during normalization.
+      is_summary_raw: "Sammelvorgang"
+      parent_name: "Sammelvorgangsname"
+      building: "Gebäude"
+      floor_raw: "Geschoss"
+      zone: "Wabe"
+      gewerk_raw: "Gewerk"
+      phase_raw: "SIA_Phase"
+      procurement_package: "Beschaffungspaket"
+      contractor: "Planer"
+      takt_nr: "Takt_Nr"
+      predecessors: "Vorgänger"
+
+  - schedule_id: usb
+    label: "USB NBK2 Basel"
+    project: usb
+    file: "USB_Schedule_04062026.xlsx"
+    reader: excel
+    duration_unit: mpp
+    columns:
+      task_id: "Unique ID"
+      task_name: "Vorgangsname"
+      duration: "Duration"
+      start: "Start"
+      finish: "Finish"
+      wbs: "WBS"
+      is_summary_raw: "Summary"
+      is_milestone_raw: "Milestone"
+      floor_raw: "Etage"
+      gewerk_raw: "Gewerk"
+      procurement_package: "Vergabepaket Nr."
+      contractor: "Firma"
+
+  - schedule_id: pred_bau04
+    label: "Roche pRED Bau 04"
+    project: pred_bau04
+    file: "pRED_Bau04_Filtered.csv"
+    reader: csv_semicolon
+    parser: pred
+    duration_unit: days_d
+    constants:
+      building: "B04"
+    columns:
+      task_id: "Task_ID"
+      task_name: "Task_Name"
+      task_category: "Task_Category"
+      full_path: "pathString"
+      start: "Start_Date"
+      finish: "End_Date"
+      duration: "Duration_Old"
+      parent_name: "Summary_Task_Name"
+      is_critical_raw: "Critical"
+      predecessors: "Predecessor_Task_ID"
+
+  - schedule_id: pred_bau05
+    label: "Roche pRED Bau 05"
+    project: pred_bau05
+    file: "pRED_Bau05_Filtered.csv"
+    reader: csv_semicolon
+    parser: pred
+    duration_unit: days_d
+    constants:
+      building: "B05"
+    columns:
+      task_id: "Task_ID"
+      task_name: "Task_Name"
+      task_category: "Task_Category"
+      full_path: "pathString"
+      start: "Start_Date"
+      finish: "End_Date"
+      duration: "Duration_Old"
+      parent_name: "Summary_Task_Name"
+      is_critical_raw: "Critical"
+      predecessors: "Predecessor_Task_ID"
+
+  - schedule_id: pred_bau07
+    label: "Roche pRED Bau 07"
+    project: pred_bau07
+    file: "pRED_Bau07_Filtered.csv"
+    reader: csv_semicolon
+    parser: pred
+    duration_unit: days_d
+    constants:
+      building: "B07"
+    columns:
+      task_id: "Task_ID"
+      task_name: "Task_Name"
+      task_category: "Task_Category"
+      full_path: "pathString"
+      start: "Start_Date"
+      finish: "End_Date"
+      duration: "Duration_Old"
+      parent_name: "Summary_Task_Name"
+      is_critical_raw: "Critical"
+      predecessors: "Predecessor_Task_ID"

@@ -1,0 +1,35 @@
+# Task group (activity type): what kind of work a task is, independent of trade.
+#
+# This is the axis that makes "how much time did a gewerk take" answerable at
+# all - it separates a trade's own site production from the waiting, checking
+# and coordinating around it.
+
+groups:
+  Vorbereitung:   { name: "Vorbereitung",        productive: false, order: 10 }
+  Planung:        { name: "Planung / Modell",    productive: false, order: 20 }
+  Beschaffung:    { name: "Beschaffung / AVOR",  productive: false, order: 30 }
+  Lieferung:      { name: "Lieferung",           productive: false, order: 40 }
+  Vorfertigung:   { name: "Vorfertigung",        productive: true,  order: 50 }
+  Rueckbau:       { name: "Rückbau",             productive: true,  order: 60 }
+  Montage:        { name: "Montage / Einbau",    productive: true,  order: 70 }
+  Pruefung:       { name: "Prüfung / Abnahme",   productive: false, order: 80 }
+  Inbetriebnahme: { name: "Inbetriebnahme",      productive: false, order: 90 }
+  Reinigung:      { name: "Reinigung",           productive: true,  order: 100 }
+  Koordination:   { name: "Koordination",        productive: false, order: 110 }
+  Meilenstein:    { name: "Meilenstein",         productive: false, order: 120 }
+
+# Ordered; first match wins. Checked against the task name, then against the
+# name of its immediate parent.
+keywords:
+  - { match: "meilenstein|milestone|\\bms\\d|^start\\b|^ende\\b|^beginn\\b|zwischentermin|bereitschaftsmeldung", group: Meilenstein }
+  - { match: "reinigung|baureinigung|schlussreinigung|zwischenreinigung|putzen|entsorgung", group: Reinigung }
+  - { match: "inbetriebnahme|inbetriebsetzung|einregulier|\\bibn\\b|\\bibs\\b|energetisierung|parametrier|linientest", group: Inbetriebnahme }
+  - { match: "pr(ü|ue)fung|pr(ü|ue)flauf|pr(ü|ue)fen|abnahme|dichtheit|druckpr|messung|kontrolle|inspekt|\\btests?\\b|qualit(ä|ae)t|revision|m(ä|ae)ngelbehebung|nacharbeit|restarbeiten|review|sign[- ]?off|approval|plausibilit(ä|ae)t", group: Pruefung }
+  - { match: "r(ü|ue)ckbau|abbruch|demontage|demontieren|abriss|entkernung|entfernen|abbau", group: Rueckbau }
+  - { match: "vorfertigung|produktion|\\bapa\\b|werkstattfertigung|pre[- ]?fab", group: Vorfertigung }
+  - { match: "lieferung|anlieferung|bestellung|transport|lift\\s*&\\s*shif|antransport|einbringung", group: Lieferung }
+  - { match: "\\bavor\\b|beschaffung|ausschreibung|submission|vergabe|angebot|offerte|verhandlung", group: Beschaffung }
+  - { match: "modellbearbeitung|modell bearbeitung|dks-wmp|wmp|planung|werkplan|plangrundlagen|projektierung|konzept|entwurf|bewilligung|eingabe|nachweis|berechnung|erarbeitung|(ü|ue)berarbeitung", group: Planung }
+  - { match: "onboarding|kick[- ]?off|bemusterung|vorbereit|vorarbeiten|einrichtung baustelle|absteck|spicken|schnurger(ü|ue)st|haftgrund|kugelstrahlen", group: Vorbereitung }
+  - { match: "koordination|abstimmung|besprechung|sitzung|(ü|ue)bergabe|schnittstelle|freigabe", group: Koordination }
+  - { match: "montage|montieren|einbau|einbauen|installation|installieren|verlegen|verlegung|stellen|setzen|erstellen|erstellung|ausf(ü|ue)hrung|herstellung|verkabelung|kabelzug|kabelz(ü|ue)ge|anschluss|anschl(ie|ei)ssen|schliessen|d(ä|ae)mm|isolier|anstrich|streichen|betonieren|schalen|bewehren|mauern|verputzen|spachteln|beschichtung|abdichtung|aufbau|(ö|oe)ffnen|durchbr(ü|ue)che|finisch|finish", group: Montage }
