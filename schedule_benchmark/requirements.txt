@@ -1,0 +1,20 @@
+# Cross-schedule benchmark + dashboard.
+#
+# pandas/openpyxl/groq/python-dotenv are already pinned by backend/requirements.txt;
+# they are repeated here so this package can be installed on its own.
+
+pandas>=2.0.0
+openpyxl>=3.1.0
+pyyaml>=6.0
+pyarrow>=14.0.0
+
+# Task-name clustering (TF-IDF + k-means)
+scikit-learn>=1.3.0
+
+# Dashboard
+streamlit>=1.30.0
+plotly>=5.18.0
+
+# Only needed when the LLM fallback actually has signatures left to classify.
+groq>=0.4.0
+python-dotenv>=1.0.0

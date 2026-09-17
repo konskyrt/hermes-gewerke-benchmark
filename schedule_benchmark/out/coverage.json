@@ -1,0 +1,770 @@
+{
+  "generated_at": "2026-09-11T16:39:49.612650+00:00",
+  "overall": {
+    "gewerk": {
+      "resolved": 1.0,
+      "resolved_work_tasks": 1.0,
+      "by_source": {
+        "column": 26188,
+        "rule": 6805,
+        "llm": 763,
+        "fallback": 15,
+        "cache": 11
+      }
+    },
+    "phase": {
+      "resolved": 1.0,
+      "resolved_work_tasks": 1.0,
+      "by_source": {
+        "rule": 23829,
+        "column": 5343,
+        "parse": 3886,
+        "fallback": 724
+      }
+    },
+    "activity": {
+      "resolved": 0.7427328162927003,
+      "resolved_work_tasks": 0.7825023051280232,
+      "by_source": {
+        "rule": 13861,
+        "parse": 11230
+      }
+    },
+    "component": {
+      "resolved": 0.8949440530460008,
+      "resolved_work_tasks": 0.9347826086956522,
+      "by_source": {
+        "fallback": 12943,
+        "parse": 9080,
+        "rule": 8210
+      }
+    },
+    "montage": {
+      "resolved": 0.541146172517909,
+      "resolved_work_tasks": 0.6250443293850628,
+      "by_source": {
+        "rule": 13291,
+        "parse": 4990
+      }
+    },
+    "stage": {
+      "resolved": 0.6824048309750755,
+      "resolved_work_tasks": 0.794276189800695,
+      "by_source": {
+        "rule": 13291,
+        "parse": 4990,
+        "cluster": 4772
+      }
+    },
+    "fields": {
+      "start": 1.0,
+      "duration": 1.0,
+      "floor": 0.882363388786928,
+      "zone": 0.4807293825113966,
+      "crew_size": 0.05100349298442958,
+      "contractor": 0.15232964300515067,
+      "critical_flag": 0.0523651648807057
+    },
+    "tasks": 33782,
+    "work_tasks": 28198
+  },
+  "by_schedule": {
+    "baeretower": {
+      "gewerk": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "column": 1190,
+          "rule": 929,
+          "llm": 9,
+          "cache": 1,
+          "fallback": 1
+        }
+      },
+      "phase": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "rule": 2129,
+          "fallback": 1
+        }
+      },
+      "activity": {
+        "resolved": 0.5248826291079812,
+        "resolved_work_tasks": 0.5087145969498911,
+        "by_source": {
+          "rule": 1118
+        }
+      },
+      "component": {
+        "resolved": 0.976056338028169,
+        "resolved_work_tasks": 0.974400871459695,
+        "by_source": {
+          "rule": 1194,
+          "fallback": 885
+        }
+      },
+      "montage": {
+        "resolved": 0.43333333333333335,
+        "resolved_work_tasks": 0.49074074074074076,
+        "by_source": {
+          "rule": 923
+        }
+      },
+      "stage": {
+        "resolved": 0.7530516431924883,
+        "resolved_work_tasks": 0.8616557734204793,
+        "by_source": {
+          "rule": 923,
+          "cluster": 681
+        }
+      },
+      "fields": {
+        "start": 1.0,
+        "duration": 1.0,
+        "floor": 0.7187793427230047,
+        "zone": 0.0,
+        "crew_size": 0.6516431924882629,
+        "contractor": 0.0,
+        "critical_flag": 0.0
+      },
+      "tasks": 2130,
+      "work_tasks": 1836
+    },
+    "burckhardt": {
+      "gewerk": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "rule": 1518,
+          "llm": 24,
+          "column": 24,
+          "fallback": 1,
+          "cache": 1
+        }
+      },
+      "phase": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "rule": 1547,
+          "fallback": 21
+        }
+      },
+      "activity": {
+        "resolved": 0.5025510204081632,
+        "resolved_work_tasks": 0.5733333333333334,
+        "by_source": {
+          "rule": 788
+        }
+      },
+      "component": {
+        "resolved": 0.9483418367346939,
+        "resolved_work_tasks": 0.9633333333333334,
+        "by_source": {
+          "fallback": 750,
+          "rule": 737
+        }
+      },
+      "montage": {
+        "resolved": 0.5063775510204082,
+        "resolved_work_tasks": 0.6083333333333333,
+        "by_source": {
+          "rule": 794
+        }
+      },
+      "stage": {
+        "resolved": 0.6983418367346939,
+        "resolved_work_tasks": 0.8591666666666666,
+        "by_source": {
+          "rule": 794,
+          "cluster": 301
+        }
+      },
+      "fields": {
+        "start": 1.0,
+        "duration": 1.0,
+        "floor": 0.8660714285714286,
+        "zone": 0.6753826530612245,
+        "crew_size": 0.0,
+        "contractor": 0.8654336734693877,
+        "critical_flag": 0.0
+      },
+      "tasks": 1568,
+      "work_tasks": 1200
+    },
+    "dc30": {
+      "gewerk": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "column": 4623,
+          "rule": 75
+        }
+      },
+      "phase": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "rule": 4698
+        }
+      },
+      "activity": {
+        "resolved": 0.9212430821626224,
+        "resolved_work_tasks": 0.9212430821626224,
+        "by_source": {
+          "parse": 4153,
+          "rule": 175
+        }
+      },
+      "component": {
+        "resolved": 0.9827586206896551,
+        "resolved_work_tasks": 0.9827586206896551,
+        "by_source": {
+          "parse": 3016,
+          "fallback": 1156,
+          "rule": 445
+        }
+      },
+      "montage": {
+        "resolved": 0.8765432098765432,
+        "resolved_work_tasks": 0.8765432098765432,
+        "by_source": {
+          "rule": 4118
+        }
+      },
+      "stage": {
+        "resolved": 0.9401873137505321,
+        "resolved_work_tasks": 0.9401873137505321,
+        "by_source": {
+          "rule": 4118,
+          "cluster": 299
+        }
+      },
+      "fields": {
+        "start": 1.0,
+        "duration": 1.0,
+        "floor": 0.9929757343550447,
+        "zone": 1.0,
+        "crew_size": 0.0,
+        "contractor": 0.0,
+        "critical_flag": 0.011707109408258833
+      },
+      "tasks": 4698,
+      "work_tasks": 4698
+    },
+    "elp_v6": {
+      "gewerk": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "column": 2394,
+          "rule": 1634,
+          "llm": 202,
+          "cache": 5,
+          "fallback": 1
+        }
+      },
+      "phase": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "column": 3975,
+          "rule": 207,
+          "fallback": 54
+        }
+      },
+      "activity": {
+        "resolved": 0.7386685552407932,
+        "resolved_work_tasks": 0.7786425902864259,
+        "by_source": {
+          "rule": 3129
+        }
+      },
+      "component": {
+        "resolved": 0.8245986779981114,
+        "resolved_work_tasks": 0.8900996264009963,
+        "by_source": {
+          "fallback": 1767,
+          "rule": 1726
+        }
+      },
+      "montage": {
+        "resolved": 0.6352691218130312,
+        "resolved_work_tasks": 0.7363013698630136,
+        "by_source": {
+          "rule": 2691
+        }
+      },
+      "stage": {
+        "resolved": 0.7535410764872521,
+        "resolved_work_tasks": 0.8922789539227896,
+        "by_source": {
+          "rule": 2691,
+          "cluster": 501
+        }
+      },
+      "fields": {
+        "start": 1.0,
+        "duration": 1.0,
+        "floor": 0.9251652502360718,
+        "zone": 0.9254013220018886,
+        "crew_size": 0.0,
+        "contractor": 0.591123701605288,
+        "critical_flag": 0.018413597733711047
+      },
+      "tasks": 4236,
+      "work_tasks": 3212
+    },
+    "elp_v7": {
+      "gewerk": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "column": 584,
+          "rule": 574,
+          "llm": 54
+        }
+      },
+      "phase": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "column": 1154,
+          "rule": 33,
+          "fallback": 25
+        }
+      },
+      "activity": {
+        "resolved": 0.5973597359735974,
+        "resolved_work_tasks": 0.6318840579710145,
+        "by_source": {
+          "rule": 724
+        }
+      },
+      "component": {
+        "resolved": 0.7912541254125413,
+        "resolved_work_tasks": 0.9014492753623189,
+        "by_source": {
+          "fallback": 590,
+          "rule": 369
+        }
+      },
+      "montage": {
+        "resolved": 0.4405940594059406,
+        "resolved_work_tasks": 0.5681159420289855,
+        "by_source": {
+          "rule": 534
+        }
+      },
+      "stage": {
+        "resolved": 0.5915841584158416,
+        "resolved_work_tasks": 0.8333333333333334,
+        "by_source": {
+          "rule": 534,
+          "cluster": 183
+        }
+      },
+      "fields": {
+        "start": 1.0,
+        "duration": 1.0,
+        "floor": 0.8836633663366337,
+        "zone": 0.7995049504950495,
+        "crew_size": 0.0,
+        "contractor": 0.4067656765676568,
+        "critical_flag": 0.0
+      },
+      "tasks": 1212,
+      "work_tasks": 690
+    },
+    "frankfurt_four": {
+      "gewerk": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "rule": 571
+        }
+      },
+      "phase": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "rule": 571
+        }
+      },
+      "activity": {
+        "resolved": 0.7688266199649737,
+        "resolved_work_tasks": 0.8856304985337243,
+        "by_source": {
+          "rule": 439
+        }
+      },
+      "component": {
+        "resolved": 0.9246935201401051,
+        "resolved_work_tasks": 0.9560117302052786,
+        "by_source": {
+          "fallback": 315,
+          "rule": 213
+        }
+      },
+      "montage": {
+        "resolved": 0.5201401050788091,
+        "resolved_work_tasks": 0.7800586510263929,
+        "by_source": {
+          "rule": 297
+        }
+      },
+      "stage": {
+        "resolved": 0.6042031523642732,
+        "resolved_work_tasks": 0.9208211143695014,
+        "by_source": {
+          "rule": 297,
+          "cluster": 48
+        }
+      },
+      "fields": {
+        "start": 1.0,
+        "duration": 1.0,
+        "floor": 0.9667250437828371,
+        "zone": 0.8669001751313485,
+        "crew_size": 0.5866900175131349,
+        "contractor": 0.0,
+        "critical_flag": 0.0
+      },
+      "tasks": 571,
+      "work_tasks": 341
+    },
+    "uh1": {
+      "gewerk": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "column": 2442,
+          "rule": 1072,
+          "llm": 464,
+          "fallback": 12
+        }
+      },
+      "phase": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "rule": 3320,
+          "fallback": 456,
+          "column": 214
+        }
+      },
+      "activity": {
+        "resolved": 0.7105263157894737,
+        "resolved_work_tasks": 0.7303724928366763,
+        "by_source": {
+          "rule": 2835
+        }
+      },
+      "component": {
+        "resolved": 0.7303258145363408,
+        "resolved_work_tasks": 0.8203438395415473,
+        "by_source": {
+          "fallback": 1604,
+          "rule": 1310
+        }
+      },
+      "montage": {
+        "resolved": 0.4523809523809524,
+        "resolved_work_tasks": 0.5160458452722063,
+        "by_source": {
+          "rule": 1805
+        }
+      },
+      "stage": {
+        "resolved": 0.618546365914787,
+        "resolved_work_tasks": 0.7060171919770774,
+        "by_source": {
+          "rule": 1805,
+          "cluster": 663
+        }
+      },
+      "fields": {
+        "start": 1.0,
+        "duration": 1.0,
+        "floor": 0.7300751879699248,
+        "zone": 0.7741854636591479,
+        "crew_size": 0.0,
+        "contractor": 0.19172932330827067,
+        "critical_flag": 0.0
+      },
+      "tasks": 3990,
+      "work_tasks": 3490
+    },
+    "usb": {
+      "gewerk": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "column": 3835,
+          "rule": 402,
+          "llm": 6,
+          "cache": 4
+        }
+      },
+      "phase": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "rule": 4243,
+          "fallback": 4
+        }
+      },
+      "activity": {
+        "resolved": 0.854956439839887,
+        "resolved_work_tasks": 0.8665158371040724,
+        "by_source": {
+          "rule": 3631
+        }
+      },
+      "component": {
+        "resolved": 0.9171179656227926,
+        "resolved_work_tasks": 0.9366515837104072,
+        "by_source": {
+          "fallback": 2715,
+          "rule": 1180
+        }
+      },
+      "montage": {
+        "resolved": 0.39910525076524606,
+        "resolved_work_tasks": 0.5381383322559793,
+        "by_source": {
+          "rule": 1695
+        }
+      },
+      "stage": {
+        "resolved": 0.4770426183188133,
+        "resolved_work_tasks": 0.6451195862960569,
+        "by_source": {
+          "rule": 1695,
+          "cluster": 331
+        }
+      },
+      "fields": {
+        "start": 1.0,
+        "duration": 1.0,
+        "floor": 0.9566753002119143,
+        "zone": 0.0,
+        "crew_size": 0.0,
+        "contractor": 0.0063574287732517075,
+        "critical_flag": 0.0
+      },
+      "tasks": 4247,
+      "work_tasks": 3094
+    },
+    "pred_bau04": {
+      "gewerk": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "column": 2231,
+          "rule": 14,
+          "llm": 2
+        }
+      },
+      "phase": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "rule": 1383,
+          "parse": 831,
+          "fallback": 33
+        }
+      },
+      "activity": {
+        "resolved": 0.7174009790832221,
+        "resolved_work_tasks": 0.7826541274817137,
+        "by_source": {
+          "parse": 1397,
+          "rule": 215
+        }
+      },
+      "component": {
+        "resolved": 0.9270137961726747,
+        "resolved_work_tasks": 0.9702194357366771,
+        "by_source": {
+          "fallback": 1049,
+          "parse": 654,
+          "rule": 380
+        }
+      },
+      "montage": {
+        "resolved": 0.44503782821539833,
+        "resolved_work_tasks": 0.5167189132706375,
+        "by_source": {
+          "parse": 920,
+          "rule": 80
+        }
+      },
+      "stage": {
+        "resolved": 0.6226079216733422,
+        "resolved_work_tasks": 0.7251828631138976,
+        "by_source": {
+          "parse": 920,
+          "cluster": 399,
+          "rule": 80
+        }
+      },
+      "fields": {
+        "start": 1.0,
+        "duration": 1.0,
+        "floor": 0.8518024032042724,
+        "zone": 0.30351579884290164,
+        "crew_size": 0.0,
+        "contractor": 0.0,
+        "critical_flag": 0.08500222518914108
+      },
+      "tasks": 2247,
+      "work_tasks": 1914
+    },
+    "pred_bau05": {
+      "gewerk": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "column": 2580,
+          "rule": 16,
+          "llm": 1
+        }
+      },
+      "phase": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "rule": 1723,
+          "parse": 789,
+          "fallback": 85
+        }
+      },
+      "activity": {
+        "resolved": 0.7069695802849442,
+        "resolved_work_tasks": 0.7724230254350736,
+        "by_source": {
+          "parse": 1604,
+          "rule": 232
+        }
+      },
+      "component": {
+        "resolved": 0.8644589911436272,
+        "resolved_work_tasks": 0.8960285586791611,
+        "by_source": {
+          "parse": 1091,
+          "fallback": 908,
+          "rule": 246
+        }
+      },
+      "montage": {
+        "resolved": 0.5240662302656912,
+        "resolved_work_tasks": 0.6028558679161089,
+        "by_source": {
+          "parse": 1281,
+          "rule": 80
+        }
+      },
+      "stage": {
+        "resolved": 0.6488255679630343,
+        "resolved_work_tasks": 0.747434181169121,
+        "by_source": {
+          "parse": 1281,
+          "cluster": 324,
+          "rule": 80
+        }
+      },
+      "fields": {
+        "start": 1.0,
+        "duration": 1.0,
+        "floor": 0.8860223334616866,
+        "zone": 0.3211397766653831,
+        "crew_size": 0.0,
+        "contractor": 0.0,
+        "critical_flag": 0.10550635348479014
+      },
+      "tasks": 2597,
+      "work_tasks": 2241
+    },
+    "pred_bau07": {
+      "gewerk": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "column": 6285,
+          "llm": 1
+        }
+      },
+      "phase": {
+        "resolved": 1.0,
+        "resolved_work_tasks": 1.0,
+        "by_source": {
+          "rule": 3975,
+          "parse": 2266,
+          "fallback": 45
+        }
+      },
+      "activity": {
+        "resolved": 0.7398981864460706,
+        "resolved_work_tasks": 0.8057278365560014,
+        "by_source": {
+          "parse": 4076,
+          "rule": 575
+        }
+      },
+      "component": {
+        "resolved": 0.9438434616608335,
+        "resolved_work_tasks": 0.9784750091207588,
+        "by_source": {
+          "parse": 4319,
+          "fallback": 1204,
+          "rule": 410
+        }
+      },
+      "montage": {
+        "resolved": 0.48727330575882916,
+        "resolved_work_tasks": 0.5558190441444728,
+        "by_source": {
+          "parse": 2789,
+          "rule": 274
+        }
+      },
+      "stage": {
+        "resolved": 0.6530384982500795,
+        "resolved_work_tasks": 0.7458956585187888,
+        "by_source": {
+          "parse": 2789,
+          "cluster": 1042,
+          "rule": 274
+        }
+      },
+      "fields": {
+        "start": 1.0,
+        "duration": 1.0,
+        "floor": 0.8783009863188037,
+        "zone": 0.07858733693923003,
+        "crew_size": 0.0,
+        "contractor": 0.0,
+        "critical_flag": 0.1862869869551384
+      },
+      "tasks": 6286,
+      "work_tasks": 5482
+    }
+  },
+  "duplicate_checks": [
+    {
+      "schedule_id": "bf1",
+      "duplicate_of": "baeretower",
+      "identical": true,
+      "fingerprint": "1e9eb206188c3c91680dc31f7698d66fb8daaf03ec2f4ad6f3555507cce1891c",
+      "twin_fingerprint": "1e9eb206188c3c91680dc31f7698d66fb8daaf03ec2f4ad6f3555507cce1891c"
+    }
+  ],
+  "warm_start": {
+    "usb_gewerk_run": 0,
+    "elp_v6_gewerk_run": 0
+  },
+  "llm_signatures_resolved": 0,
+  "rule_vs_cache_disagreements": 257
+}

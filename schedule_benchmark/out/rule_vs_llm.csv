@@ -1,0 +1,258 @@
+﻿task_name,rule_gewerk,cached_gewerk,rule_source,cached_origin,tasks,schedules
+Montage Türzargen,INT,ENV,column,usb_gewerk_run,59,usb
+Montage Türblätter,INT,ENV,column,usb_gewerk_run,58,usb
+Notwendige BS Massnahmen während Etappenumbau erstellen,SEC,OTH,column,,38,uh1
+Entsorgung Mobiliar,KO,EQUIP,column,,38,uh1
+Feininstallation / Accessoires,SN,OTH,column,,38,uh1
+FB-Vorarbeiten,INT,ENV,column,,38,uh1
+Abnahmeprüfung inkl. Dokumentenprüfung (mit BH),LF,OTH,column,usb_gewerk_run,37,usb
+Energetisierung,LF,OTH,column,usb_gewerk_run,37,usb
+Mängelbehebung,LF,OTH,column,usb_gewerk_run,37,usb
+Inbetriebsetzung,LF,OTH,column,usb_gewerk_run,37,usb
+Integrierte Tests,SN,OTH,column,usb_gewerk_run,33,usb
+Mängelbehebung,SN,OTH,column,usb_gewerk_run,33,usb
+Inbetriebsetzung,SN,OTH,column,usb_gewerk_run,33,usb
+Abnahmeprüfung inkl. Dokumentenprüfung (mit BH),SN,OTH,column,usb_gewerk_run,33,usb
+Allgemein,INT,OTH,rule,,31,"elp_v6,elp_v7"
+Einbringung Hartbetonboden,INT,KO,column,usb_gewerk_run,24,usb
+"Apparate Fertigmontage (Feldgeräte, usw.)",EL,AUTO,column,usb_gewerk_run,23,usb
+Energetisierung,EL,OTH,column,usb_gewerk_run,20,usb
+Hygienekontrolle,LF,OTH,column,usb_gewerk_run,19,usb
+Energetisierung,SPR,OTH,column,usb_gewerk_run,19,usb
+Inbetriebsetzung,SPR,OTH,column,usb_gewerk_run,19,usb
+Integrierte Tests,SPR,OTH,column,usb_gewerk_run,19,usb
+Mängelbehebung,EL,OTH,column,usb_gewerk_run,19,usb
+Integrierte Tests (inkl. Hydr.-Abgleich),LF,HZ,column,usb_gewerk_run,19,usb
+Abnahmeprüfung inkl. Dokumentenprüfung (mit BH),SPR,OTH,column,usb_gewerk_run,19,usb
+Mängelbehebung,SPR,OTH,column,usb_gewerk_run,19,usb
+Letzter Meter und Nachtest Medizinaltechnik,LF,EQUIP,column,usb_gewerk_run,18,usb
+Mängelbehebung,AUTO,OTH,column,usb_gewerk_run,18,usb
+Integrierte Tests,LF,OTH,column,usb_gewerk_run,18,usb
+Abnahmeprüfung inkl. Dokumentenprüfung (mit BH),AUTO,OTH,column,usb_gewerk_run,18,usb
+Funktionskontrolle,AUTO,OTH,column,usb_gewerk_run,18,usb
+Integrierte Tests,AUTO,OTH,column,usb_gewerk_run,18,usb
+Energetisierung,AUTO,OTH,column,usb_gewerk_run,18,usb
+RDA,LF,OTH,rule,usb_gewerk_run,18,usb
+Energetisierung/Systemfüllung,SN,HZ,column,usb_gewerk_run,17,usb
+Türen und ZUKO,INT,ENV,column,usb_gewerk_run,17,usb
+Abnahmeprüfung inkl. Dokumentenprüfung (mit BH),HZ,OTH,column,usb_gewerk_run,17,usb
+Medizinische Gase,SN,SPEC,column,usb_gewerk_run,17,usb
+Mängelbehebung,INT,OTH,column,usb_gewerk_run,17,usb
+Integrierte Tests,INT,OTH,column,usb_gewerk_run,17,usb
+Prov. ICT,EL,OTH,column,usb_gewerk_run,17,usb
+Inbetriebsetzung,INT,OTH,column,usb_gewerk_run,17,usb
+Inbetriebsetzung,HZ,OTH,column,usb_gewerk_run,17,usb
+Zonenübergreifend,KO,OTH,rule,,17,"elp_v6,elp_v7"
+Abnahmeprüfung inkl. Dokumentenprüfung (mit BH),INT,OTH,column,usb_gewerk_run,17,usb
+Energetisierung,SN,OTH,column,usb_gewerk_run,16,usb
+Grobmontage Decke Korridor ab Steigzone bis in die Räume (SP) inkl.Druckprüfung und Dämmung,SPR,SN,column,usb_gewerk_run,16,usb
+Deckenpendel,EQUIP,INT,column,usb_gewerk_run,16,usb
+Grobmontage Decke Korridor ab Steigzone bis in die Räume (MedGase) inkl. Druckprüfung und Dämmung,GAS,SPEC,column,usb_gewerk_run,16,usb
+Normprofilschienen,EQUIP,INT,column,usb_gewerk_run,16,usb
+Mängelbehebung,HZ,OTH,column,usb_gewerk_run,16,usb
+Inbetriebsetzung,EQUIP,OTH,column,usb_gewerk_run,15,usb
+Abnahmeprüfung,EQUIP,OTH,column,usb_gewerk_run,15,usb
+Integrierte Tests,EQUIP,OTH,column,usb_gewerk_run,15,usb
+Installationen HK/EL Decke,EL,HZ,column,usb_gewerk_run,14,usb
+Montage Doppelboden inkl. Rahmen für SGK,EL,INT,column,usb_gewerk_run,12,usb
+Dämmung,HZ,ENV,rule,,11,burckhardt
+Montage TB-Wände schliessen,INT,KO,column,usb_gewerk_run,10,usb
+Montage TB-Wände (schliessen Bereich der Fertignasszellen),INT,KO,column,usb_gewerk_run,10,usb
+Dämmung,INT,ENV,rule,,8,"elp_v6,elp_v7"
+BS-Abnahme,SEC,OTH,column,,6,uh1
+Abbau notwendige BS Maßnahmen während Etappen-Umbau,KO,SEC,column,,6,uh1
+IBS,LF,KO,rule,,6,elp_v6
+Grundinstallation Aufhängung,EL,INT,rule,usb_gewerk_run,6,usb
+Funktionskontrolle,LF,OTH,rule,usb_gewerk_run,5,elp_v6
+IBS,INT,KO,rule,,5,baeretower
+Mieterausbau,INT,OTH,rule,,5,baeretower
+Sitzmobiliar,INT,EQUIP,rule,usb_gewerk_run,5,"elp_v6,elp_v7,usb"
+"Einbringen und Gerätemontage (Monoblöcke, WRG, usw.)",LF,SN,column,usb_gewerk_run,5,usb
+Allgemein,SITE,OTH,rule,,4,elp_v7
+Grundinstallation - Rohrpost,TRANS,SN,column,usb_gewerk_run,4,usb
+Grundinstallation Aufhängung (oben),LF,INT,rule,usb_gewerk_run,4,usb
+Grundinstallation Aufhängung (mitte),LF,INT,rule,usb_gewerk_run,4,usb
+Signaletik,INT,EQUIP,rule,,4,"elp_v6,elp_v7"
+Grundinstallation Aufhängung (oben),SN,INT,rule,usb_gewerk_run,3,usb
+Hülle Dicht,KO,ENV,rule,,3,"elp_v6,elp_v7"
+Lüftung,OTH,LF,column,usb_gewerk_run,3,"pred_bau04,pred_bau05,pred_bau07"
+Küchenanschlüsse Kiosk fertigstellen,EQUIP,SN,column,usb_gewerk_run,3,usb
+Sprinkler,OTH,SPR,column,usb_gewerk_run,3,"pred_bau04,pred_bau05,pred_bau07"
+Sanitär,OTH,SN,column,usb_gewerk_run,3,"pred_bau04,pred_bau05,pred_bau07"
+Montage TB-Wände schliessen (Phase 4 und 5),INT,KO,column,usb_gewerk_run,3,usb
+Grundinstallation Aufhängung,LF,INT,rule,usb_gewerk_run,3,usb
+Grundinstallation - Rohrpost an Decke,TRANS,SN,column,usb_gewerk_run,3,usb
+"Einbringen und Gerätemontage (Monoblöcke, WRG, usw.) -> Einbringung Fassade / Standkran",LF,ENV,column,usb_gewerk_run,3,usb
+MTA/STA/Rohrpost,TRANS,EL,rule,usb_gewerk_run,2,usb
+Baustart,KO,OTH,column,,2,"elp_v6,elp_v7"
+Aufbau HF Kabine einschalig,EQUIP,EL,column,usb_gewerk_run,2,usb
+Grundinstallation Aufhängung,TRANS,INT,rule,usb_gewerk_run,2,usb
+Inbetriebsetzung,EL,OTH,column,usb_gewerk_run,2,usb
+Energetisierung,TRANS,OTH,column,usb_gewerk_run,2,usb
+Feinmontage LU Decke,LF,INT,column,usb_gewerk_run,2,usb
+Feinmontage SP Decke,SPR,INT,column,usb_gewerk_run,2,usb
+Übergabe Bauherr,INT,OTH,rule,,2,baeretower
+SA Feinmontage UP Installationen Wand,INT,SN,rule,usb_gewerk_run,2,usb
+Integrierte Tests,TRANS,OTH,column,usb_gewerk_run,2,usb
+Integrierte Tests,EL,OTH,column,usb_gewerk_run,2,usb
+Restausbau mit Medizinal-Technik,EQUIP,INT,column,usb_gewerk_run,2,usb
+Vormontage Unterkonstruktion Med.-Technik,EQUIP,INT,column,usb_gewerk_run,2,usb
+Allgemein,ENV,OTH,rule,,2,elp_v6
+Einbringen und Montage Schaltanlagen Rohrpost,TRANS,EL,column,usb_gewerk_run,2,usb
+Inbetriebsetzung,TRANS,OTH,column,usb_gewerk_run,2,usb
+Einbringen und Gerätemontage (Gruppenaufbau usw.),HZ,EL,column,usb_gewerk_run,2,usb
+Ende,SN,OTH,rule,,1,elp_v6
+Einbringen und Montage Schaltanlagen (HV),INT,EL,rule,usb_gewerk_run,1,usb
+Ende,LF,OTH,rule,,1,elp_v6
+"EL 01 Mittelspannungsanl., Trafostation",OTH,EL,rule,usb_gewerk_run,1,usb
+EL 03 Haupt- und Unterverteilung,OTH,EL,rule,usb_gewerk_run,1,usb
+EG00 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+EL 12NS HV (UG03_CE075),INT,EL,rule,usb_gewerk_run,1,usb
+"EL Notbel., SSV,.. (UG03_GD075; GE062; GD060; GD053; GD050; GD042 Turm rechts)",INT,EL,rule,usb_gewerk_run,1,usb
+EL10 und EL11 (UG03_EE074; FA074),INT,EL,rule,usb_gewerk_run,1,usb
+EL10 und EL11 (UG04_EE074; FA074),INT,EL,rule,usb_gewerk_run,1,usb
+ER 01 Rauch und Wärmeabzugsanlagen,OTH,SEC,rule,usb_gewerk_run,1,usb
+Verknüpfungspt: UG04 Turm Stützenfrei und Decke über EG provisorisch abgedichtet,INT,KO,rule,usb_gewerk_run,1,usb
+Verknüpfungspunkt: EG00 Annex Stützenfrei und Decke über EG00 dicht,INT,KO,rule,usb_gewerk_run,1,usb
+Verknüpfungspt: UG04 Turm Stützenfrei,SN,KO,rule,usb_gewerk_run,1,usb
+Zentrale OG14,OTH,AUTO,rule,usb_gewerk_run,1,usb
+Wechseln von provisorischer ICT zu endgültiger ICT,EL,AUTO,column,usb_gewerk_run,1,usb
+Verknüpfungspunkt: UG04 Annex Stützenfrei und Decke über EG00 dicht,INT,KO,rule,usb_gewerk_run,1,usb
+Abnahmeprüfung,EL,OTH,column,usb_gewerk_run,1,usb
+Abnahmeprüfung,TRANS,OTH,column,usb_gewerk_run,1,usb
+Abnahmeprüfung inkl. Dokumentenprüfung (mit BH),TRANS,OTH,column,usb_gewerk_run,1,usb
+Abnahmeprüfung inkl. Dokumentenprüfung (mit BH),GAS,OTH,column,usb_gewerk_run,1,usb
+Allgemein,SPR,OTH,rule,,1,elp_v6
+Verknüpfungspunkt: UG01 Annex Stützenfrei und Decke über EG00 dicht,INT,KO,rule,usb_gewerk_run,1,usb
+Dauer,SPR,OTH,rule,,1,elp_v6
+Zentralen UG04 Turm,INT,KO,rule,usb_gewerk_run,1,usb
+Zentrale UG04 UG03,OTH,AUTO,rule,usb_gewerk_run,1,usb
+Decken Kern Bettenturm und Korridor (OG14_DB065; OG14_EE81;OG14_GB062),INT,KO,rule,usb_gewerk_run,1,usb
+Innere Spezialverglasungen,INT,ENV,column,usb_gewerk_run,1,usb
+Installation Öltank NEA,EL,HZ,column,usb_gewerk_run,1,usb
+Inbetriebsetzung (Ausbau) Medizinaltechnik,HZ,INT,column,usb_gewerk_run,1,usb
+Inbetriebsetzung (Ausbau) Medizinaltechnik,LF,INT,column,usb_gewerk_run,1,usb
+Inbetriebnahme Zentralen,OTH,AUTO,rule,usb_gewerk_run,1,usb
+ICT,EL,HZ,column,usb_gewerk_run,1,usb
+Inbetriebsetzung,GAS,OTH,column,usb_gewerk_run,1,usb
+Grundinstallation Aufhängung (oben),HZ,INT,rule,usb_gewerk_run,1,usb
+HK,OTH,HZ,rule,usb_gewerk_run,1,usb
+Grundinstallation Aufhängung (oben),KT,INT,rule,usb_gewerk_run,1,usb
+Grundinstallation Aufhängung,SN,INT,rule,usb_gewerk_run,1,usb
+Helikopterlandeplatz - Technik/Befeuerung,KO,EL,column,usb_gewerk_run,1,usb
+Hygienekontrolle / Spülung,GAS,SN,column,usb_gewerk_run,1,usb
+Hubschrauberlandeplatz,ENV,SITE,rule,usb_gewerk_run,1,usb
+IBN,TRANS,OTH,column,,1,baeretower
+IBS,HZ,KO,rule,,1,elp_v6
+Fugendichtungen (Ausbau),ENV,INT,column,usb_gewerk_run,1,usb
+Feinmontage Montage RDA Klappen,LF,AUTO,column,usb_gewerk_run,1,usb
+Feinmontage Fassadenbefahranlage,ENV,KO,column,usb_gewerk_run,1,usb
+Feinmontage Helikopterlandeplatz,INT,KO,column,usb_gewerk_run,1,usb
+Energietunnel Einbringung (UG04_IE011; UG04_EE013; UG04_FB014),INT,KO,rule,usb_gewerk_run,1,usb
+Ende,SPR,OTH,rule,,1,elp_v6
+Energetisierung,GAS,OTH,column,usb_gewerk_run,1,usb
+GA 02 Gebäudeaut. Gebäude-/Feldebene,OTH,AUTO,rule,usb_gewerk_run,1,usb
+Geräteanschlüsse SA (Notkühlung),SN,KT,column,usb_gewerk_run,1,usb
+Geräteanschlüsse SA (Durchlauferhitzer),SN,HZ,column,usb_gewerk_run,1,usb
+Gebäudetechnik,LF,OTH,rule,usb_gewerk_run,1,elp_v6
+Gebäudeautomation Provisorisches ICT-Netz,EL,AUTO,column,usb_gewerk_run,1,usb
+Gase verfügbar,SN,GAS,column,usb_gewerk_run,1,usb
+GIS Elemnte montiert,INT,EL,rule,,1,elp_v6
+Grobmontage RDA Klappen,LF,AUTO,column,usb_gewerk_run,1,usb
+Grundinstallation Aufhängung,KT,INT,rule,usb_gewerk_run,1,usb
+Verknüpfungspt: UG03 Turm Stützenfrei und Decke über EG provisorisch abgedichtet,INT,KO,rule,usb_gewerk_run,1,usb
+Verknüpfungspt: UG02 Turm Stützenfrei und Decke über EG provisorisch abgedichtet,INT,KO,rule,usb_gewerk_run,1,usb
+Verknüpfungspt: UG01 Turm Stützenfrei und Decke über EG provisorisch abgedichtet,INT,KO,rule,usb_gewerk_run,1,usb
+Verknüpfungspt: EG00 Turm Stützenfrei und Decke über EG provisorisch abgedichtet,INT,KO,rule,usb_gewerk_run,1,usb
+Verknüpfungspt. OG15 Stützenfrei,INT,ENV,rule,usb_gewerk_run,1,usb
+Medizintechnik,OTH,EQUIP,rule,usb_gewerk_run,1,usb
+Medizinal Technik,OTH,INT,rule,usb_gewerk_run,1,usb
+Metallbauarbeiten,INT,OTH,column,usb_gewerk_run,1,usb
+Montage Doppelboden (FA074),EL,INT,column,usb_gewerk_run,1,usb
+Montage Brandschutzvorhänge von UG04 bis OG07,INT,SEC,column,usb_gewerk_run,1,usb
+Montage Brandschutzvorhänge von OG08 bis OG15,INT,SEC,column,usb_gewerk_run,1,usb
+MG 01 Medizinalgase,GAS,SPEC,rule,usb_gewerk_run,1,usb
+Korridor Annex (UG01_LA024; UG01_HB020; UG01_PE032; UG01_QF032),INT,KO,rule,usb_gewerk_run,1,usb
+Kern Bettenturm und Korridor (UG02_ED070; UG02_DF062; UG02_FE062; UG02_EF065 02_ED052; UG02_EA025; UG02_ED094),INT,KO,rule,usb_gewerk_run,1,usb
+"Apparate Fertigmontage (Feldgeräte, usw.)",HZ,AUTO,column,usb_gewerk_run,1,usb
+Montage TB-Wände,INT,KO,column,usb_gewerk_run,1,usb
+Brandschutzvorhänge,INT,SEC,column,usb_gewerk_run,1,usb
+Betten und Liegen,INT,EQUIP,rule,usb_gewerk_run,1,usb
+Betriebseinrichtungen - Office Küchen,INT,EQUIP,column,usb_gewerk_run,1,usb
+Betriebseinrichtungen - Kälte & Kühlräume,INT,KT,column,usb_gewerk_run,1,usb
+Beschriftungen & Gebäudesignaletik,EQUIP,INT,rule,usb_gewerk_run,1,usb
+Bereitstellen der Wirecenter,EL,AUTO,column,usb_gewerk_run,1,usb
+MTA-Phase 01 - Steuerung,EQUIP,AUTO,column,usb_gewerk_run,1,usb
+Malerarbeiten Rohbau,INT,KO,column,usb_gewerk_run,1,usb
+Liftmaschinenraum (OG14_DD084),INT,TRANS,rule,usb_gewerk_run,1,usb
+Lose Möblierung,INT,EQUIP,rule,usb_gewerk_run,1,usb
+MTA-Phase 01 - Aufzüge,EQUIP,TRANS,column,usb_gewerk_run,1,usb
+Kunst am Bau,OTH,INT,rule,usb_gewerk_run,1,usb
+Kühlräume Aufrüstung,HZ,KT,column,usb_gewerk_run,1,usb
+Integrierte Tests,GAS,OTH,column,usb_gewerk_run,1,usb
+KO 01 Koordinierte Aufhängung,OTH,KO,rule,usb_gewerk_run,1,usb
+Kern Bettenturm und Korridor (FA063 / FD080),INT,KO,rule,usb_gewerk_run,1,usb
+OG01 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+Neue Veloplätze,INT,SITE,rule,usb_gewerk_run,1,usb
+"Möbel (Betten, Tische etc.) und Signaletik",INT,EQUIP,column,usb_gewerk_run,1,usb
+Mängelbehebung,TRANS,OTH,column,usb_gewerk_run,1,usb
+Dauer,SN,OTH,rule,,1,elp_v6
+Dauer,LF,OTH,rule,,1,elp_v6
+"Dachbegrünung inkl. Absturzsicherung, inkl. Dachbegrünung Provisorium",OTH,ENV,rule,usb_gewerk_run,1,usb
+Mängelbehebung,GAS,OTH,column,usb_gewerk_run,1,usb
+Dachaufbauten Inbetriebnahme Haustechnik,ENV,HZ,rule,usb_gewerk_run,1,usb
+Baustellenkolonne,OTH,SN,column,usb_gewerk_run,1,usb
+OG07 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+OG08 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+OG09 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+OG03 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+OG06 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+OG02 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+Provisorium Notfall - Modul Elementbau inkl. Holzverkleidung,OTH,INT,rule,usb_gewerk_run,1,usb
+OG11 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+Rohrpostzentrale (FB084),TRANS,SPEC,rule,usb_gewerk_run,1,usb
+Rohrpost verfügbar,TRANS,SITE,column,usb_gewerk_run,1,usb
+Rohrpostzentrale 2 (UG03_FA084),TRANS,SN,rule,usb_gewerk_run,1,usb
+SA 04 Wasserversorgung Stadtnetz,OTH,SN,rule,usb_gewerk_run,1,usb
+STA Endausbau Phase 01,KO,SITE,column,usb_gewerk_run,1,usb
+Rohrpost-Phase 01,TRANS,SITE,column,usb_gewerk_run,1,usb
+STA-Phase 01 Tunnel Nord Süd,OTH,SITE,column,usb_gewerk_run,1,usb
+STA-Phase 01 Tunnel Ost West (nach Abstimmung mit Agiplan),OTH,SITE,column,usb_gewerk_run,1,usb
+Sanitär Sauerstoff (GE053),SN,SPEC,rule,usb_gewerk_run,1,usb
+OG10 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+OG13 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+OG12 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+OG04 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+OG05 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+Schutzraumteile,INT,KO,rule,usb_gewerk_run,1,usb
+Schreinerarbeiten Theken und Möblierung,INT,EQUIP,column,usb_gewerk_run,1,usb
+Schreinerarbeiten - Rammschutz/Geländer/Sockel/Fensterfutter,ENV,INT,rule,usb_gewerk_run,1,usb
+Schliessen HF Kabinen und Schirmung,EQUIP,INT,column,usb_gewerk_run,1,usb
+Sanitär Vakuum / Druckluft Tech / Med (UG04_KB014; UG04_KF014; UG04_MC014),SN,SPEC,rule,usb_gewerk_run,1,usb
+Start,LF,OTH,rule,,1,elp_v6
+Spritzputz R90 auf Beton,KO,INT,rule,,1,elp_v6
+Spez. Dichtungen und Dämmungen,ENV,INT,column,usb_gewerk_run,1,usb
+Start Inbetriebsetzung,EL,OTH,column,usb_gewerk_run,1,usb
+Teil -Montage und -Schlussinstallationskontrolle,EL,AUTO,column,usb_gewerk_run,1,usb
+Teilprojekt 21a Anbindung Cityparking Grundausbau,OTH,SITE,column,usb_gewerk_run,1,usb
+Teilprojekt 21b Anbindung Cityparking Mieterausbau EMYL,OTH,SITE,column,usb_gewerk_run,1,usb
+Tisch Decorleuchten & Schreibtischleuchten,EL,EQUIP,column,usb_gewerk_run,1,usb
+Tische,INT,EQUIP,rule,usb_gewerk_run,1,usb
+Start,SN,OTH,rule,,1,elp_v6
+Start,SPR,OTH,rule,,1,elp_v6
+Turm (022_OG03 IPS),INT,KO,rule,usb_gewerk_run,1,usb
+Tore Wagenhalle,INT,ENV,rule,usb_gewerk_run,1,usb
+Turm (022_OG13 ISO),INT,KO,rule,usb_gewerk_run,1,usb
+Turm (022_OG06),INT,KO,rule,usb_gewerk_run,1,usb
+Turm (022_OG15 OG16),INT,KO,rule,usb_gewerk_run,1,usb
+Turm Zentralen (022_OG14),INT,KO,rule,usb_gewerk_run,1,usb
+Turm und Annex Zentralen (022_UG04),INT,KO,rule,usb_gewerk_run,1,usb
+Turm (022_OG10),INT,KO,rule,usb_gewerk_run,1,usb
+Türen und ZUKO verfügbar,INT,SEC,column,usb_gewerk_run,1,usb
+UG01 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+UG04_Energietunnel 3 Cluster UG04-06,INT,KO,rule,usb_gewerk_run,1,usb
+UG02 Inbetriebnahme Haustechnik,OTH,HZ,rule,usb_gewerk_run,1,usb
+Umgebungsarbeiten - Baumeister- und Ausbau,KO,SITE,rule,usb_gewerk_run,1,usb
+"Verknüpfungspt. OG01 Stützenfrei, Decke über OG08 dicht und Fensterfassade fertig OG01",ENV,KO,rule,usb_gewerk_run,1,usb
+"Verknüpfungspt. OG02 Stützenfrei, Decke über OG08 dicht und Fensterfassade fertig OG02",ENV,KO,rule,usb_gewerk_run,1,usb
+Verknüpfungspt. OG14 Stützenfrei und Turm geräumt und abgedichtet,INT,ENV,rule,usb_gewerk_run,1,usb

@@ -1,0 +1,6 @@
+# Logs and local-only build artefacts. The dashboard reads tasks_all.parquet
+# and the metrics CSVs — those stay in git so Streamlit Cloud can run without
+# the OneDrive source schedules.
+out/_streamlit.log
+out/tasks_all.csv
+out/pending_signatures.csv

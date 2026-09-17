@@ -1,0 +1,95 @@
+# Construction phase taxonomy and the rules that assign it.
+#
+# A task's phase is looked for in this order:
+#   1. explicit  - a phase column the source already has (UH1 SIA_Phase, ELP MS)
+#   2. strong    - keywords that name a phase whatever the trade is, checked on
+#                  the ancestor names first and then on the task's own name
+#   3. gewerk    - the default phase of the task's gewerk
+#   4. weak      - keywords for the phases a trade already implies
+#
+# Splitting strong from weak is what stops a data-center fit-out schedule, whose
+# every ancestor says "Ausbau", from labelling its chiller installation as
+# Ausbau rather than TGA-Installation.
+#
+# Order within each keyword list matters: the first pattern that matches wins.
+
+phases:
+  PLAN:      { name: "Planung",            order: 10 }
+  PROC:      { name: "Beschaffung / AVOR", order: 20 }
+  DEMO:      { name: "Rückbau",            order: 30 }
+  EARTH:     { name: "Baugrube / Erdbau",  order: 40 }
+  SHELL:     { name: "Rohbau",             order: 50 }
+  ENVELOPE:  { name: "Hülle / Fassade",    order: 60 }
+  MEP:       { name: "TGA-Installation",   order: 70 }
+  FITOUT:    { name: "Ausbau",             order: 80 }
+  COMM:      { name: "Inbetriebnahme",     order: 90 }
+  HANDOVER:  { name: "Abnahme / Übergabe", order: 100 }
+  MOVE:      { name: "Umzug",              order: 110 }
+  OTHER:     { name: "Sonstiges",          order: 120 }
+
+# Values of a source's own phase column.
+explicit:
+  # UH1 SIA_Phase
+  "sia31 concept design": PLAN
+  "sia32 detailed design": PLAN
+  "sia33 authority approval": PLAN
+  "sia41 tender design": PROC
+  "sia51 execution planning": PLAN
+  "sia52 execution": FITOUT
+  # ELP MS marker
+  roh: SHELL
+  stb: SHELL
+  gab: ENVELOPE
+  "gt": MEP
+  ibs: COMM
+  umg: MOVE
+  "übrg": HANDOVER
+  mas: OTHER
+  elp: OTHER
+  b: OTHER
+  ph1: PLAN
+  ph2: PLAN
+  ph3: PLAN
+  ph4: PLAN
+  # pRED work stream. Only the procurement branch states a phase; its execution
+  # branch says nothing beyond "on site", so it is left to the trade default.
+  beschaffung: PROC
+
+# Trade-independent: these words name a phase no matter which gewerk performs it.
+strong:
+  - { match: "sia\\s*3[123]|vorprojekt|bauprojekt|konzept|entwurf|bewilligung|baubewilligung|baueingabe|projektierung|ausf(ü|ue)hrungsplanung|werkplanung|\\bplanung\\b|modellbearbeitung|dks-wmp|wmp erstellung|wmp pr(ü|ue)flauf|werkstattplan", phase: PLAN }
+  - { match: "sia\\s*41|ausschreibung|submission|vergabe|beschaffung|\\bavor\\b|bestellung|vorfertigung|onboarding|bemusterung|angebot|offerte|freigabeprozess", phase: PROC }
+  - { match: "r(ü|ue)ckbau|abbruch|demontage|abriss|schadstoffsanierung|entkernung", phase: DEMO }
+  - { match: "baugrube|erdbau|aushub|spundwand|schlitzwand|pf(ä|ae)hl|baugrubensicherung|werkleitung|kanalisation|baustelleneinrichtung|tiefbau", phase: EARTH }
+  - { match: "inbetriebnahme|inbetriebsetzung|einregulier|\\bibn\\b|\\bibs\\b|funktionspr(ü|ue)fung|integrierte? test|integraler test|energetisierung|linientest", phase: COMM }
+  # Anchored: "Abnahmerelevanter Grundausbau" is fit-out, not a handover.
+  - { match: "\\babnahmen?\\b|\\bwerk(ü|ue)bergabe\\b|\\b(ü|ue)bergabe\\b|schlussreinigung|m(ä|ae)ngelbehebung|\\bgarantie\\b|schlussabnahme|bauherren(ü|ue)bergabe", phase: HANDOVER }
+  - { match: "umzug|\\bmove\\b|einzug|erstbezug", phase: MOVE }
+
+# Trade-implied: only consulted when the gewerk has no default, so they mostly
+# serve the rows whose gewerk is unresolved or Sonstige.
+weak:
+  - { match: "rohbau|betonarbeiten|betonieren|schalung|bewehrung|mauerwerk|stahlbau|tragwerk|kern:", phase: SHELL }
+  - { match: "fassade|geb(ä|ae)udeh(ü|ue)lle|bedachung|dachabdichtung|fenster|\\bgab\\b|witterungsschutz", phase: ENVELOPE }
+  - { match: "installation|montage|leitung|verkabelung|steigzone|schacht|feininstallation|rohinstallation|hauptleitung|verteilleitung|geb(ä|ae)udetechnik", phase: MEP }
+  - { match: "ausbau|innenausbau|gipser|maler|bodenbel|unterlagsboden|t(ü|ue)ren|schreiner|trockenbau|doppelboden|decken", phase: FITOUT }
+
+# Fallback by gewerk when nothing else matched: technical trades default to the
+# TGA phase, finishing trades to fit-out.
+gewerk_default:
+  SN: MEP
+  HZ: MEP
+  KT: MEP
+  LF: MEP
+  EL: MEP
+  SPR: MEP
+  AUTO: MEP
+  GAS: MEP
+  SPEC: MEP
+  SEC: MEP
+  KO: SHELL
+  ENV: ENVELOPE
+  INT: FITOUT
+  TRANS: MEP
+  EQUIP: FITOUT
+  SITE: EARTH

@@ -1,0 +1,152 @@
+# Component group -> level-2 codes of backend/scripts/data/label_object.json.
+#
+# The text searched is, in order: the parsed component group (pRED work package,
+# DC30 material), then the task name. Rules are checked only against codes whose
+# gewerk matches the task's gewerk, so "Rohr" resolves to SN.01 for a sanitary
+# task and to HZ.03 for a heating one.
+#
+# `any` rules apply regardless of gewerk and run first.
+
+any:
+  - { match: "aufzug|lift\\b|fahrtreppe|rolltreppe", code: TRANS.01 }
+  - { match: "rohrpost|materialtransport|f(ö|oe)rderanlage", code: TRANS.05 }
+
+# Per-gewerk rules, ordered; first match wins within a gewerk.
+by_gewerk:
+  KO:
+    - { match: "fundament|bodenplatte|pf(ä|ae)hl", code: KO.01 }
+    - { match: "w(a|ä)nd|mauerwerk|schlitzwand|kern\\b", code: KO.02 }
+    - { match: "st(ü|ue)tze|verbundst(ü|ue)tze", code: KO.03 }
+    - { match: "tr(ä|ae)ger|unterzug|koppelbalken|balken", code: KO.04 }
+    - { match: "decke|geschossdecke|betondecke", code: KO.05 }
+    - { match: "treppe|rampe", code: KO.06 }
+    - { match: "dachtragwerk|dachkonstruktion", code: KO.07 }
+    - { match: "aussparung|sockel|durchbruch", code: KO.08 }
+    - { match: "bewehrung|stahleinlage|armierung", code: KO.09 }
+  ENV:
+    - { match: "dach|bedachung|attika|flachdach|abdichtung", code: ENV.01 }
+    - { match: "fassade|wdvs|fassadenputz|verkleidung aussen|stahlfassade", code: ENV.02 }
+    - { match: "fenster|aussent(ü|ue)r|verglasung|holzfenster", code: ENV.03 }
+    - { match: "sonnenschutz|storen|jalousie|lamelle", code: ENV.04 }
+  INT:
+    - { match: "trennwand|systemtrennw|glaswand|glastrennw|faltwand|elementwand|sanit(ä|ae)rtrennw", code: INT.01 }
+    - { match: "trockenbau|gipskarton|st(ä|ae)nderwand|vorsatzschale", code: INT.02 }
+    - { match: "t(ü|ue)r|zarge|schiebet(ü|ue)r|innenfenster|tor\\b", code: INT.03 }
+    - { match: "maler|anstrich|tapezier|wandbel|wandbekleidung|putz|spachtel|kernverkleidung", code: INT.04 }
+    - { match: "decke|k(ü|ue)hldecke|metalldecke|akustikdecke|brandschutzdecke|deckenbekleidung|lamellenk", code: INT.05 }
+    - { match: "boden|doppelboden|hohlraumboden|unterlagsboden|estrich|teppich|parkett|naturstein|fliesen|platten|kautschuk|epoxy|beschichtung|hartbeton|linoleum|\\bpvc\\b", code: INT.06 }
+    - { match: "brandschott|abschottung|schutzbauteil|prallschutz", code: INT.07 }
+    - { match: "einbau|schreiner|m(ö|oe)bel|theke|nische|garderobenschrank|vorhang", code: INT.08 }
+  SN:
+    - { match: "rohr|leitung|fallleitung|steigleitung", code: SN.01 }
+    - { match: "fitting|formst(ü|ue)ck", code: SN.02 }
+    - { match: "ventil|armatur|absperr", code: SN.03 }
+    - { match: "pumpe", code: SN.04 }
+    - { match: "speicher|boiler|beh(ä|ae)lter", code: SN.05 }
+    - { match: "apparat|nasszelle|wc|dusche|waschtisch|becken", code: SN.06 }
+    - { match: "d(ä|ae)mmung|isolierung", code: SN.08 }
+    - { match: "halterung|aufh(ä|ae)ngung|konsole", code: SN.09 }
+  HZ:
+    - { match: "kessel|w(ä|ae)rmeerzeuger|w(ä|ae)rmepumpe|heizzentrale", code: HZ.01 }
+    - { match: "pumpe", code: HZ.02 }
+    - { match: "rohr|leitung", code: HZ.03 }
+    - { match: "fitting|formst(ü|ue)ck", code: HZ.04 }
+    - { match: "ventil|armatur|verteiler", code: HZ.05 }
+    - { match: "speicher", code: HZ.06 }
+    - { match: "z(ä|ae)hler|messger", code: HZ.07 }
+    - { match: "heizk(ö|oe)rper|radiator|fussbodenheizung|w(ä|ae)rmeabgabe|konvektor|heating equipment", code: HZ.08 }
+    - { match: "d(ä|ae)mmung|isolierung", code: HZ.09 }
+    - { match: "halterung|aufh(ä|ae)ngung", code: HZ.10 }
+  KT:
+    - { match: "k(ä|ae)lteerzeuger|k(ä|ae)ltemaschine|chiller|outdoor unit|refrigeration equipment", code: KT.01 }
+    - { match: "pumpe", code: KT.02 }
+    - { match: "rohr|leitung|piping", code: KT.03 }
+    - { match: "fitting", code: KT.04 }
+    - { match: "ventil|armatur", code: KT.05 }
+    - { match: "speicher", code: KT.06 }
+    - { match: "k(ü|ue)hldecke|endger(ä|ae)t|umluftk(ü|ue)hler|k(ü|ue)hlzelle|\\bskid", code: KT.07 }
+    - { match: "d(ä|ae)mmung|isolierung|insulation", code: KT.08 }
+    - { match: "halterung|aufh(ä|ae)ngung", code: KT.09 }
+  LF:
+    - { match: "monobl(o|ö)ck|l(ü|ue)ftungsger|klimager|\\brlt\\b", code: LF.01 }
+    - { match: "ventilator|l(ü|ue)fter", code: LF.02 }
+    - { match: "kanal|luftleitung|luftkan", code: LF.03 }
+    - { match: "fitting|formteil", code: LF.04 }
+    - { match: "klappe|armatur|volumenstrom", code: LF.05 }
+    - { match: "schalld(ä|ae)mpfer", code: LF.06 }
+    - { match: "auslass|durchlass|gitter|diffusor", code: LF.07 }
+    - { match: "d(ä|ae)mmung|isolierung", code: LF.08 }
+    - { match: "halterung|montageschiene|aufh(ä|ae)ngung", code: LF.09 }
+  EL:
+    - { match: "leerrohr|\\brohr|\\bras\\b|unterflurkanal", code: EL.01 }
+    - { match: "kabel|verkabelung|\\blwl\\b|leitung|stromschiene|ableitung|erdungsleiter", code: EL.02 }
+    - { match: "trasse|kabeltrag|kabelrinne|h(ä|ae)ngestiel|seilabh(ä|ae)ngung", code: EL.03 }
+    - { match: "leuchte|beleuchtung|licht", code: EL.05 }
+    - { match: "verteil|schaltschrank|schaltwarte|unterverteiler|\\busv\\b|trafo|\\bnea\\b", code: EL.06 }
+    - { match: "sensor|melder|taster|f(ü|ue)hler", code: EL.07 }
+    - { match: "halterung|sockel|potentialausgleichsschiene|fangstange", code: EL.08 }
+    - { match: "ger(ä|ae)t|dose|steckdose", code: EL.04 }
+  SPR:
+    - { match: "rohr|l(ö|oe)schrohr|leitung|zuleitung", code: SPR.01 }
+    - { match: "fitting", code: SPR.02 }
+    - { match: "ventil|station|armatur", code: SPR.03 }
+    - { match: "pumpe", code: SPR.04 }
+    - { match: "kopf|sprinklerkopf|d(ü|ue)se", code: SPR.05 }
+    - { match: "wandhydrant|feuerwehr", code: SPR.07 }
+    - { match: "halterung", code: SPR.08 }
+  AUTO:
+    - { match: "managementstation|leitstation|gls\\b", code: AUTO.01 }
+    - { match: "ddc|regler(?!.*raum)", code: AUTO.02 }
+    - { match: "raumregler|raumbedien", code: AUTO.03 }
+    - { match: "sensor|aktor|f(ü|ue)hler|feldger", code: AUTO.04 }
+    - { match: "schrank|schaltschrank|\\bisp\\b|steuerleitung|msr", code: AUTO.05 }
+    - { match: "bus|kommunikation", code: AUTO.06 }
+    - { match: "terminal|bedienpanel", code: AUTO.07 }
+  SEC:
+    - { match: "einbruch", code: SEC.01 }
+    - { match: "kartenleser|zutritt|badge", code: SEC.02 }
+    - { match: "kamera|video", code: SEC.03 }
+    - { match: "elektroschloss|schliessanlage|t(ü|ue)rsteuer", code: SEC.04 }
+    - { match: "zentrale|alarm", code: SEC.05 }
+    - { match: "gaswarn", code: SEC.06 }
+    - { match: "sirene|signal", code: SEC.07 }
+    - { match: "brandmelder|\\bbma\\b|rauchmelder|brandschutz", code: SEC.08 }
+  GAS:
+    - { match: "rohr|leitung", code: GAS.01 }
+    - { match: "fitting", code: GAS.02 }
+    - { match: "ventil|armatur", code: GAS.03 }
+    - { match: "z(ä|ae)hler", code: GAS.04 }
+    - { match: "verdichter|kompressor", code: GAS.05 }
+    - { match: "halterung", code: GAS.06 }
+  SPEC:
+    - { match: "druckluft", code: SPEC.01 }
+    - { match: "vakuumleitung", code: SPEC.02 }
+    - { match: "fitting", code: SPEC.03 }
+    - { match: "ventil|armatur", code: SPEC.04 }
+    - { match: "medgas|entnahmestelle", code: SPEC.05 }
+    - { match: "kontrolleinheit|(ü|ue)berwachung", code: SPEC.06 }
+    - { match: "kompressor", code: SPEC.07 }
+    - { match: "vakuumpumpe", code: SPEC.08 }
+    - { match: "d(ä|ae)mmung|isolierung", code: SPEC.09 }
+    - { match: "halterung", code: SPEC.10 }
+  TRANS:
+    - { match: "aufzug|lift", code: TRANS.01 }
+    - { match: "fahrtreppe|rolltreppe", code: TRANS.02 }
+    - { match: "fahrsteig", code: TRANS.03 }
+    - { match: "hebe|kran|laufkatze|\\bbmu\\b", code: TRANS.04 }
+    - { match: "rohrpost|materialtransport", code: TRANS.05 }
+  EQUIP:
+    - { match: "m(ö|oe)bel|mobiliar|schrank|sitzm|theke|garderobe", code: EQUIP.01 }
+    - { match: "k(ü|ue)che|kochger|ausgabetheke", code: EQUIP.02 }
+    - { match: "labor|abzug|autoklav|compound store|produktion", code: EQUIP.03 }
+    - { match: "med technik|medizin|\\bmta\\b", code: EQUIP.04 }
+    - { match: "\\bit\\b|\\bav\\b|ict|server|multimedia", code: EQUIP.05 }
+    - { match: "ladestation|e-mobil", code: EQUIP.06 }
+    - { match: "kunst|inventar|beschriftung|leitsystem", code: EQUIP.07 }
+  SITE:
+    - { match: "gel(ä|ae)nde|aushub|baugrube|erdbau", code: SITE.01 }
+    - { match: "aussenbauwerk|st(ü|ue)tzmauer|velokeller", code: SITE.02 }
+    - { match: "gr(ü|ue)n|bepflanzung|rasen|garten", code: SITE.03 }
+    - { match: "belag|hartfl(ä|ae)che|strasse|platz|weg", code: SITE.04 }
+    - { match: "werkleitung|kanalisation|aussentechnik|schacht aussen", code: SITE.05 }
+    - { match: "aussenausstattung|m(ö|oe)blierung aussen|velostand", code: SITE.06 }

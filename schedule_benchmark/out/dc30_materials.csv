@@ -1,0 +1,571 @@
+﻿gewerk,gewerk_name,material,unit,tasks,task_days,median_task_days
+EL,Elektro,LWL-Kabel,m,197,1690.0,5.0
+EL,Elektro,Schwachstromkabel,m,150,1454.0,5.0
+EL,Elektro,Schaltwartenboden,m²,144,1285.0,10.0
+KT,Kälte,Skids,Stück,126,1221.0,10.0
+EL,Elektro,EMA-Komponenten,Stück,72,1112.0,15.0
+EL,Elektro,Kabeltrassen,Stück,130,1004.0,5.0
+EL,Elektro,BMA-Komponenten,Stück,54,816.0,15.0
+AUTO,Automation,MSR-Kabel,m,60,803.0,10.0
+EL,Elektro,Potentialausgleichsleiter,m,95,769.0,5.0
+EL,Elektro,Leuchten,Stück,111,750.0,5.0
+EL,Elektro,Potentialausgleichsschiene,Stück,81,748.0,10.0
+EL,Elektro,Kabeltrassen,m,93,688.0,6.0
+AUTO,Automation,Steuerleitungen,m,51,667.0,10.0
+EL,Elektro,Stromschiene,Stück,57,626.0,10.0
+EL,Elektro,Datenkabel,m,72,621.0,5.0
+SPR,Sprinkler,Löschrohre,m,97,613.0,5.0
+EL,Elektro,ZuKo-Komponenten,Stück,36,607.0,15.0
+EL,Elektro,LWL-Faser / LWL-Kabel,m,36,607.0,15.0
+KT,Kälte,Kältemittelleitungen,m,39,603.0,15.0
+KT,Kälte,Rohrisolierung,m,39,589.0,15.0
+KT,Kälte,Kupferrohre,m,39,589.0,15.0
+EL,Elektro,cables,m,66,570.0,10.0
+LF,Lüftung,Luftkanäle,m,62,545.0,5.0
+EL,Elektro,lighting fixtures,Stück,57,525.0,10.0
+AUTO,Automation,control cables,m,78,520.0,5.0
+EL,Elektro,Netzwerkkomponenten,Stück,36,505.0,15.0
+EL,Elektro,Kabel,m,67,485.0,5.0
+KT,Kälte,Gewindestangen,Stück,36,426.0,10.0
+KT,Kälte,Konsolen,Stück,36,426.0,10.0
+KT,Kälte,Rohrhalterungen,Stück,36,426.0,10.0
+INT,Ausbau,Doppelbodenplatten,m²,76,424.0,5.0
+EL,Elektro,low-voltage cables,m,39,408.0,10.0
+KT,Kälte,Connecting cables,m,18,404.0,20.0
+KT,Kälte,Fan walls,Stück,18,404.0,20.0
+KT,Kälte,Refrigerant piping,m,18,404.0,20.0
+KT,Kälte,Isoliermaterial,m²,36,401.0,10.0
+EL,Elektro,MS-Kabel,m,51,401.0,5.0
+EL,Elektro,RAS-Rohre,Stück,39,396.0,10.0
+EL,Elektro,Rohrschellen,Stück,39,396.0,10.0
+LF,Lüftung,Montagehalterung,Stück,21,394.0,15.0
+EL,Elektro,detectors and call points,Stück,36,393.0,10.0
+EL,Elektro,BMA components,Stück,36,393.0,10.0
+AUTO,Automation,ISP,Stück,66,385.0,5.0
+SPR,Sprinkler,Gaslöschanlage,Stück,60,373.0,5.0
+EL,Elektro,Sockel BMA,Stück,36,367.0,10.0
+KT,Kälte,Schweißmaterial,kg,36,360.0,10.0
+EL,Elektro,bonding conductors,m,36,360.0,10.0
+EL,Elektro,Brandmeldekomponenten,Stück,51,352.0,5.0
+LF,Lüftung,Ventilatoren,Stück,70,349.0,5.0
+INT,Ausbau,Epoxy coating,kg,60,349.0,5.0
+HZ,Heizung,fittings,Stück,38,342.0,10.0
+HZ,Heizung,heating pipes,m,38,342.0,10.0
+EL,Elektro,Kabeltrasse,m,39,335.0,10.0
+AUTO,Automation,Datenkabel,m,33,327.0,10.0
+EL,Elektro,Potentialausgleichsmaterial,Stück,60,324.0,5.0
+INT,Ausbau,Unterkonstruktion / Stützen,Stück,54,314.0,5.0
+SPR,Sprinkler,Rohrschellen,Stück,61,310.0,5.0
+EL,Elektro,Zutrittskontrollsysteme,Stück,18,296.0,15.0
+EL,Elektro,BMA-Anlagen,Stück,18,296.0,15.0
+EL,Elektro,Schwachstromverteiler,Stück,36,295.0,8.0
+AUTO,Automation,terminal components,Stück,45,294.0,5.0
+LF,Lüftung,Lüftungsgeräte,Stück,49,292.0,5.0
+EL,Elektro,Brandmeldekabel,m,54,292.0,5.0
+LF,Lüftung,Lüftungsgerät,Stück,36,280.0,5.0
+KT,Kälte,Kältehalterungen,Stück,30,272.0,9.5
+LF,Lüftung,Lüftungskanäle,m,40,266.0,5.0
+SN,Sanitär,Rohrleitungen,m,42,263.0,5.0
+EL,Elektro,Hängestiele,Stück,48,259.0,5.0
+INT,Ausbau,Gipskartonplatten,m²,41,257.0,5.0
+EL,Elektro,Fangleitungen,m,45,236.0,5.0
+INT,Ausbau,Metallprofile,m,36,232.0,5.0
+AUTO,Automation,MSR-Feldgeräte,Stück,39,228.0,5.0
+AUTO,Automation,terminals,Stück,33,226.0,5.0
+AUTO,Automation,cable glands,Stück,33,226.0,5.0
+INT,Ausbau,Primer,kg,36,224.0,5.0
+INT,Ausbau,Quartz sand,kg,36,224.0,5.0
+EL,Elektro,Leerrohre,m,37,218.0,5.0
+SPR,Sprinkler,junction boxes,Stück,36,213.0,5.0
+TRANS,Transport,IT equipment,Stück,36,213.0,5.0
+KO,Konstruktion,Beton,m³,36,213.0,5.0
+KO,Konstruktion,Zementmörtel,kg,36,213.0,5.0
+SPR,Sprinkler,cables,m,36,213.0,5.0
+SPR,Sprinkler,conduits,m,36,213.0,5.0
+EL,Elektro,Test equipment,Stück,36,211.0,5.0
+EL,Elektro,CCTV-Kameras,Stück,18,209.0,12.5
+HZ,Heizung,Dämmstoffe,m²,33,209.0,5.0
+SPR,Sprinkler,Gaslöschrohre,m,38,207.0,5.0
+EL,Elektro,C-Profile/Konsolen,Stück,36,206.0,5.0
+ENV,Gebäudehülle,Dachabdichtungsmaterial,m²,12,204.0,15.0
+ENV,Gebäudehülle,Kies,t,12,204.0,15.0
+AUTO,Automation,MSR components,Stück,36,204.0,5.0
+INT,Ausbau,Wandwinkel,Stück,18,202.0,10.0
+SPR,Sprinkler,Rohrformteile,Stück,18,202.0,10.0
+EL,Elektro,Kopfverteiler Starkstrom,Stück,18,202.0,10.0
+INT,Ausbau,Stellfüße,Stück,18,202.0,10.0
+SPR,Sprinkler,Befestigungsmaterial,Set,18,202.0,10.0
+INT,Ausbau,Bandrasterprofile,m,18,202.0,10.0
+INT,Ausbau,Deckenplatten,Stück,18,202.0,10.0
+INT,Ausbau,DoBo-Platten,Stück,18,202.0,10.0
+KT,Kälte,CRAH unit,Stück,36,202.0,5.0
+EL,Elektro,Potentialausgleichsschienen,Stück,38,198.0,5.0
+INT,Ausbau,Klimaspange,Stück,18,197.0,10.0
+KT,Kälte,Kälteisolierung / Dämmmaterial,m²,39,197.0,5.0
+KT,Kälte,Rohrbefestigungen,Stück,24,194.0,10.0
+KT,Kälte,Kälterohrleitung,m,24,194.0,10.0
+EL,Elektro,Abgangskasten,Stück,18,193.0,10.0
+SPR,Sprinkler,Rohrbefestigungen,Stück,36,191.0,5.0
+EL,Elektro,Security-/ICT-Komponenten,Stück,36,191.0,5.0
+EL,Elektro,Netzwerk-/Schwachstromkabel,m,36,191.0,5.0
+EL,Elektro,LWL-Kabel,Stück,36,191.0,5.0
+INT,Ausbau,Stützen,Stück,36,191.0,5.0
+EL,Elektro,Erdungsmaterial,kg,36,188.0,5.0
+EL,Elektro,Ableitungen,m,36,188.0,5.0
+SN,Sanitär,Fallrohre,m,36,188.0,5.0
+EL,Elektro,Blitzschutzleitungen,m,36,188.0,5.0
+SPR,Sprinkler,control cables,m,36,187.0,5.0
+SPR,Sprinkler,field devices,Stück,36,187.0,5.0
+LF,Lüftung,Ventilation ducting,m,36,187.0,5.0
+EL,Elektro,Seilabhängungen,Stück,36,187.0,5.0
+LF,Lüftung,Fans,Stück,36,187.0,5.0
+LF,Lüftung,Grilles/diffusers,Stück,36,187.0,5.0
+EL,Elektro,Stahlseile,m,36,187.0,5.0
+EL,Elektro,Schaltwartenboden / Doppelbodenplatten,m²,24,183.0,8.0
+SPR,Sprinkler,Löschrohr,Stück,13,181.0,9.0
+KT,Kälte,Untergestell,Stück,36,180.0,5.0
+KT,Kälte,Lüfter,Stück,36,180.0,5.0
+LF,Lüftung,Entrauchungsventilatoren,Stück,18,180.0,10.0
+LF,Lüftung,Entrauchungskanäle,m,18,180.0,10.0
+LF,Lüftung,Rauchabzugsgeräte,Stück,18,180.0,10.0
+KT,Kälte,MC Skids,Stück,36,180.0,5.0
+INT,Ausbau,Epoxidharz-Beschichtung,kg,35,179.0,5.0
+HZ,Heizung,Blechummantelungen,m²,30,178.0,5.0
+HZ,Heizung,Isoliermatten,m²,30,178.0,5.0
+EL,Elektro,Beleuchtung,Stück,6,175.0,32.5
+AUTO,Automation,Klemmen/Anschlussmaterial,Stück,9,175.0,10.0
+LF,Lüftung,Alu-Klebeband,Rollen,27,172.0,5.0
+LF,Lüftung,Lüftungsdämmung,m²,27,172.0,5.0
+LF,Lüftung,Lamellenmatten,m²,27,172.0,5.0
+EL,Elektro,cable trays,m,21,165.0,6.0
+EL,Elektro,switchgear,Stück,21,165.0,6.0
+EL,Elektro,Racks,Stück,15,161.0,10.0
+EL,Elektro,Zutrittskontrollkomponenten,Stück,15,161.0,10.0
+EL,Elektro,copper bonding conductors,m,6,160.0,27.5
+EL,Elektro,earthing/bonding terminals,Stück,6,160.0,27.5
+INT,Ausbau,Spachtelmasse,kg,29,156.0,5.0
+LF,Lüftung,Luftauslässe,Stück,10,152.0,15.0
+LF,Lüftung,Luftkanalzubehör,Stück,6,150.0,25.0
+LF,Lüftung,Lüftungskanal,m,6,150.0,25.0
+KT,Kälte,Prüfgas/Formiergas,kg,29,148.0,5.0
+KT,Kälte,Stickstoff,kg,29,148.0,5.0
+KT,Kälte,Tropfwannen,Stück,12,144.0,10.0
+EL,Elektro,Starkstromkabel,m,23,142.0,5.0
+HZ,Heizung,Wasser,m³,26,142.0,5.0
+INT,Ausbau,Doppelbodenplatten,Stück,24,131.0,5.0
+EL,Elektro,Rohre,Stück,9,129.0,10.0
+EL,Elektro,Sockel,Stück,9,129.0,10.0
+KT,Kälte,Halterungen,Stück,6,127.0,15.5
+AUTO,Automation,MSR-Schaltschrank,Stück,21,127.0,5.0
+KT,Kälte,Rohrspools,Stück,6,127.0,15.5
+KT,Kälte,Rohrleitungen,m,9,123.0,10.0
+SPR,Sprinkler,Schutzplatten,Stück,12,122.0,10.0
+SPR,Sprinkler,Abdichtungsbahnen,m²,12,122.0,10.0
+KT,Kälte,Auffangwannen,Stück,12,122.0,10.0
+KO,Konstruktion,Stahlsegmente,Stück,12,121.0,10.0
+LF,Lüftung,Gewindestangen,Stück,6,118.0,15.0
+INT,Ausbau,Brandschutzmörtel,kg,24,118.0,5.0
+KT,Kälte,Skid-Module,Stück,8,113.0,10.0
+KT,Kälte,Stahlkonstruktion,Stück,8,113.0,10.0
+KT,Kälte,Fan Wall / Fan Array,Stück,18,112.0,5.0
+EL,Elektro,Seilabhängung,Stück,5,109.0,10.0
+LF,Lüftung,Montageschienen,Stück,6,109.0,10.0
+LF,Lüftung,Luftleitungen,m,6,109.0,10.0
+INT,Ausbau,Systemtrennwände,Stück,17,107.0,5.0
+HZ,Heizung,pipe insulation,m,9,107.0,10.0
+INT,Ausbau,Aluminiumrahmen,Stück,17,107.0,5.0
+INT,Ausbau,Glaspaneele,Stück,17,107.0,5.0
+INT,Ausbau,Farbe,kg,21,105.0,5.0
+AUTO,Automation,Kabelverbinder,Stück,6,105.0,17.5
+KT,Kälte,Kältemaschine,Stück,14,104.0,6.0
+SPR,Sprinkler,Rohrleitungen,m,7,104.0,5.0
+AUTO,Automation,MSR-Komponenten,Stück,18,101.0,5.0
+SPR,Sprinkler,Deckendurchführung,Stück,18,101.0,5.0
+INT,Ausbau,Türbeschläge,Satz,18,101.0,5.0
+EL,Elektro,m),,18,101.0,5.0
+SPR,Sprinkler,Ventile,Stück,18,101.0,5.0
+AUTO,Automation,Leckagesensoren,Stück,18,101.0,5.0
+SPR,Sprinkler,Leitungen,m,18,101.0,5.0
+AUTO,Automation,Leckagekabel,m,18,101.0,5.0
+SPR,Sprinkler,Flaschenbatterie,Stück,18,101.0,5.0
+EL,Elektro,Rauchansaugsystem RAS,,18,101.0,5.0
+INT,Ausbau,Schiebetürelemente,Stück,18,101.0,5.0
+EL,Elektro,Stück (Rohrsysteme,,18,101.0,5.0
+ENV,Gebäudehülle,Dübel,Stück,7,100.0,15.0
+ENV,Gebäudehülle,Armierungsgewebe,m²,7,100.0,15.0
+SN,Sanitär,Fittings,Stück,9,99.0,10.0
+INT,Ausbau,Putz,kg,18,98.0,5.0
+INT,Ausbau,Malerfarbe,kg,18,98.0,5.0
+SPR,Sprinkler,Rohrhalterungen,Stück,17,98.0,5.0
+INT,Ausbau,Schleifpapier/Schleifpads,Stück,18,98.0,5.0
+KT,Kälte,Skids/Halterungen,Stück,18,98.0,5.0
+KT,Kälte,Start Skids,Stück,18,98.0,5.0
+KT,Kälte,Kälteanlagen,Stück,18,98.0,5.0
+INT,Ausbau,Dämmung,m²,11,96.0,5.0
+KT,Kälte,Rückkühler,Stück,18,94.0,5.0
+LF,Lüftung,Entrauchungsklappe,Stück,18,93.0,5.0
+EL,Elektro,Brandmeldezentrale,Stück,18,93.0,5.0
+LF,Lüftung,Brandschutzkanal,m,18,93.0,5.0
+EL,Elektro,Stromschiene / Steigschiene,Stück,18,93.0,5.0
+LF,Lüftung,Lüftungsleitung,m,18,93.0,5.0
+EL,Elektro,Netzwerk-/ICT-Komponenten,Stück,18,93.0,5.0
+EL,Elektro,Sicherheitskomponenten,Stück,18,93.0,5.0
+LF,Lüftung,Brandschutzklappen,Stück,13,91.0,5.0
+LF,Lüftung,Luftkanäle,Stück,9,91.0,10.0
+SPR,Sprinkler,Löschrohrnetz-Stopfen,Stück,18,91.0,5.0
+ENV,Gebäudehülle,WDVS-Dämmplatten,m²,6,90.0,15.0
+ENV,Gebäudehülle,Sockelprofile,m,6,90.0,15.0
+INT,Ausbau,Grundierung,kg,18,90.0,5.0
+ENV,Gebäudehülle,Klebe- und Armierungsmörtel,kg,6,90.0,15.0
+EL,Elektro,CEE-Anschlüsse,Stück,15,90.0,5.0
+KT,Kälte,Kälteleitungen,m,18,90.0,5.0
+EL,Elektro,Chiller,Stück,15,90.0,5.0
+KT,Kälte,Rohrhalter / Kälterohrträger,Stück,18,90.0,5.0
+SPR,Sprinkler,Löschdüsen,Stück,18,90.0,5.0
+SN,Sanitär,Gullys,Stück,18,90.0,5.0
+SN,Sanitär,Fallleitungen,m,18,90.0,5.0
+EL,Elektro,Dry cooler,Stück,15,90.0,5.0
+EL,Elektro,Schaltwartenboden-Elemente,Stück,9,89.0,10.0
+KT,Kälte,Kältegerät,Stück,15,89.0,5.0
+EL,Elektro,Unterflurkanäle,Stück,9,89.0,10.0
+ENV,Gebäudehülle,Lamellenfassade,Stück,12,89.0,5.0
+AUTO,Automation,Anschlussmaterial,Stück,16,86.0,5.0
+SPR,Sprinkler,Armaturen,Stück,3,85.0,10.0
+SPR,Sprinkler,Löschrohre,Stück,3,85.0,10.0
+LF,Lüftung,Formteile,Stück,7,81.0,10.0
+KT,Kälte,Rohrschellen,Stück,9,77.0,10.0
+KT,Kälte,Kälterohre,m,9,77.0,10.0
+EL,Elektro,Potentialausgleichsmaterial,m,9,76.0,10.0
+LF,Lüftung,Montageschienen,m,3,76.0,15.0
+LF,Lüftung,Lüftungshalterungen,Stück,3,76.0,15.0
+AUTO,Automation,instrumentation cables,m,3,75.0,25.0
+AUTO,Automation,MSR control cables,m,3,75.0,25.0
+EL,Elektro,LV cables,m,12,74.0,5.0
+EL,Elektro,Earthing/bonding conductors,m,12,74.0,5.0
+INT,Ausbau,Stahl-Unterkonstruktion,Stück,9,73.0,9.0
+INT,Ausbau,Schwerlast-Doppelbodenplatten,Stück,9,73.0,9.0
+SPR,Sprinkler,Steuerzentrale,Stück,3,70.0,20.0
+SPR,Sprinkler,Verdrahtungsmaterial,Set,3,70.0,20.0
+SPR,Sprinkler,Wandhydranten,Stück,7,66.0,10.0
+HZ,Heizung,EQM Wärmemengenzähler,Stück,12,64.0,5.0
+KO,Konstruktion,Unterkonstruktion Stahl,Stück,12,62.0,5.0
+KO,Konstruktion,Stahlbauelemente,Stück,12,62.0,5.0
+TRANS,Transport,NSHV,Stück,12,61.0,5.0
+HZ,Heizung,insulation,m,6,61.0,10.0
+HZ,Heizung,pipe clamps,Stück,6,61.0,10.0
+KT,Kälte,Heizungsrohre,m,5,61.0,10.0
+KT,Kälte,Kälterohrleitungen,m,5,61.0,10.0
+KT,Kälte,Dämmung für Kälteleitungen,m,6,61.0,10.0
+EL,Elektro,Kabel/Leitungen,m,6,60.0,10.0
+EL,Elektro,Taster/Schalter,Stück,6,60.0,10.0
+INT,Ausbau,Stahltüren,Stück,12,60.0,5.0
+LF,Lüftung,Lüftungszentrale,Stück,6,60.0,10.0
+EL,Elektro,Auswerteeinheiten,Stück,12,60.0,5.0
+INT,Ausbau,Brandschutzmanschetten,Stück,12,60.0,5.0
+KO,Konstruktion,Stahlstützen,Stück,12,60.0,5.0
+INT,Ausbau,Mineralwolle,m²,12,60.0,5.0
+INT,Ausbau,Innentüren,Stück,12,60.0,5.0
+LF,Lüftung,Formteile/Verteiler,Stück,6,60.0,10.0
+EL,Elektro,Stahlstützen,Stück,9,59.0,5.0
+SPR,Sprinkler,Steuerleitung,m,6,59.0,10.0
+EL,Elektro,Doppelbodenplatten,m²,9,59.0,5.0
+INT,Ausbau,Zargen,Stück,9,56.0,5.0
+LF,Lüftung,Formstücke,Stück,6,55.0,7.5
+AUTO,Automation,Feldgeräte,Stück,11,55.0,5.0
+SN,Sanitär,Sanitärrohre,m,6,54.0,7.5
+OTH,Sonstige,technische Anlage,Stück,1,50.0,50.0
+OTH,Sonstige,Access control system,Stück,1,50.0,50.0
+OTH,Sonstige,control cabinets,Stück,1,50.0,50.0
+OTH,Sonstige,rack equipment,Stück,1,50.0,50.0
+LF,Lüftung,Lüftungskanäle,Stück,9,50.0,5.0
+OTH,Sonstige,cabling,m,1,50.0,50.0
+OTH,Sonstige,AES control system,Stück,1,50.0,50.0
+EL,Elektro,Potentialausgleichsmaterial,Set,9,47.0,5.0
+KO,Konstruktion,Gitterrostplatten,Stück,9,47.0,5.0
+KO,Konstruktion,Befestigungsklemmen,Satz,9,47.0,5.0
+KT,Kälte,Kälte-Rohrleitung,m,9,47.0,5.0
+KT,Kälte,Rohrfittings,Stück,9,47.0,5.0
+KT,Kälte,Rohrdämmung,m,9,47.0,5.0
+SN,Sanitär,pipe clamps,Stück,3,46.0,15.0
+SPR,Sprinkler,Steigleitungen,m,5,46.0,10.0
+SN,Sanitär,sanitary pipes,m,3,46.0,15.0
+TRANS,Transport,Trafo,Stück,9,46.0,5.0
+SN,Sanitär,fittings,Stück,3,46.0,15.0
+SN,Sanitär,insulation material,m,3,46.0,15.0
+EL,Elektro,Tragkonstruktion,Stück,3,45.0,15.0
+EL,Elektro,Schienenverbinder,Stück,3,45.0,15.0
+EL,Elektro,Brandmelder,Stück,9,45.0,5.0
+SN,Sanitär,Rohrschellen,Stück,3,45.0,15.0
+SPR,Sprinkler,Komponenten der Gaslöschanlage,Stück,3,45.0,15.0
+EL,Elektro,Stromschiene,m,3,45.0,15.0
+SN,Sanitär,Dämmmaterial,m,3,45.0,15.0
+SPR,Sprinkler,BV-Stationen,Stück,3,45.0,15.0
+SPR,Sprinkler,Gasflaschengestell,Stück,3,44.0,15.0
+INT,Ausbau,Brandschott-System,Stück,9,43.0,5.0
+LF,Lüftung,Befestigungsmaterial,Set,3,42.0,10.0
+LF,Lüftung,Halterungen,Stück,3,42.0,10.0
+KT,Kälte,pipe sections,m,3,41.0,10.0
+KT,Kälte,fittings,Stück,3,41.0,10.0
+INT,Ausbau,Direktabhänger,Stück,8,40.0,5.0
+INT,Ausbau,Trennwände,Stück,8,40.0,5.0
+EL,Elektro,Potentialausgleichsmaterial,kg,5,38.0,5.0
+EL,Elektro,IT-Kabel,m,5,38.0,5.0
+INT,Ausbau,Estrichmörtel,m³,5,36.0,5.0
+EL,Elektro,Patchfelder,Stück,6,35.0,5.0
+KT,Kälte,Rohrstränge,Stück,2,35.0,17.5
+HZ,Heizung,heat transfer station,Stück,4,35.0,10.0
+KO,Konstruktion,Stahltreppe,Stück,4,35.0,5.0
+HZ,Heizung,pipes,m,4,35.0,10.0
+ENV,Gebäudehülle,Dämmplatten,m²,5,35.0,5.0
+EL,Elektro,Leitungen / Potentialausgleichsmaterial,m,6,34.0,5.0
+EL,Elektro,Schaltwart-Doppelboden,Stück,6,34.0,5.0
+EL,Elektro,Installationsrohre,m,4,34.0,9.5
+EL,Elektro,Fangstangen,Stück,6,32.0,5.0
+KO,Konstruktion,Gitterroste,Stück,3,32.0,5.0
+KO,Konstruktion,Stahlkonstruktion,Stück,6,31.0,5.0
+EL,Elektro,potential bonding conductors,m,6,31.0,5.0
+INT,Ausbau,Epoxy resin floor coating,kg,6,31.0,5.0
+INT,Ausbau,Stahlkonstruktionen,kg,6,31.0,5.0
+HZ,Heizung,Rohrisolierung,m,3,31.0,10.0
+EL,Elektro,power cables,m,6,31.0,5.0
+INT,Ausbau,Geländer,Stück,6,31.0,5.0
+INT,Ausbau,Gitterroste,m²,6,31.0,5.0
+HZ,Heizung,Schalter,Stück,3,31.0,10.0
+EL,Elektro,Klemmen,Stück,6,31.0,5.0
+EL,Elektro,Cu-IT-Kabel,m,6,31.0,5.0
+KO,Konstruktion,Verkleidungselemente,Stück,6,31.0,5.0
+HZ,Heizung,Kabel,m,3,31.0,10.0
+HZ,Heizung,Leuchten,Stück,3,31.0,10.0
+HZ,Heizung,Blechverkleidung,m²,3,31.0,10.0
+EL,Elektro,Erdungs-/Potentialausgleichsmaterial,m,3,30.0,10.0
+KT,Kälte,Innengerät,Stück,3,30.0,10.0
+EL,Elektro,Melder,Stück,6,30.0,5.0
+LF,Lüftung,Brandschutzklappen (BSK),Stück,5,30.0,5.0
+EL,Elektro,electrical fixtures,Stück,6,30.0,5.0
+KO,Konstruktion,Stahlkonstruktionen,Stück,6,30.0,5.0
+SN,Sanitär,Steigleitungen,m,3,30.0,10.0
+HZ,Heizung,heat equipment,Stück,6,30.0,5.0
+INT,Ausbau,Stahlstützen,Stück,6,30.0,5.0
+OTH,Sonstige,Außentüren,Stück,6,30.0,5.0
+INT,Ausbau,Türbeschläge,Stück,6,30.0,5.0
+EL,Elektro,junction boxes,Stück,6,30.0,5.0
+INT,Ausbau,Türzargen,Stück,6,30.0,5.0
+EL,Elektro,Montagematerial,kg,3,30.0,10.0
+KT,Kälte,Außengerät Kälteanlage,Stück,3,30.0,10.0
+EL,Elektro,Unterkonstruktion/Traversen,m,3,30.0,10.0
+HZ,Heizung,Wärmezähler,Stück,3,30.0,10.0
+HZ,Heizung,Heating equipment,Stück,6,30.0,5.0
+SN,Sanitär,Sanitärverteiler,Stück,3,30.0,10.0
+SPR,Sprinkler,Kabel,m,3,29.0,10.0
+KT,Kälte,Kältepumpen,Stück,6,29.0,5.0
+TRANS,Transport,USV-Anlagen,Stück,6,29.0,5.0
+EL,Elektro,Kabeltrasse,Stück,3,29.0,10.0
+EL,Elektro,Abhänger,Stück,3,29.0,10.0
+SPR,Sprinkler,Steuer-/Signalverkabelung,m,3,29.0,10.0
+EL,Elektro,Schaltwartenbodenplatten,Stück,3,29.0,10.0
+EL,Elektro,Unterkonstruktion,m²,6,29.0,5.0
+SPR,Sprinkler,Melder-/Bediengeräte,Stück,3,29.0,10.0
+SPR,Sprinkler,Steuerungskomponenten,Stück,3,29.0,10.0
+SPR,Sprinkler,Sensoren,Stück,3,29.0,10.0
+SPR,Sprinkler,Gaslöschgeräte,Stück,3,29.0,10.0
+EL,Elektro,Stützen/Unterkonstruktion,Stück,3,29.0,10.0
+INT,Ausbau,Türen,Stück,3,26.0,5.0
+HZ,Heizung,Zentrale,Stück,1,25.0,25.0
+INT,Ausbau,Abhänger,Stück,5,25.0,5.0
+SPR,Sprinkler,Steigleitungen,Stück,2,20.0,10.0
+SPR,Sprinkler,Löschwasserbehälter,Stück,2,20.0,10.0
+KT,Kälte,Rohre,m,1,20.0,20.0
+EL,Elektro,Befestigungsmaterial,kg,2,20.0,10.0
+EL,Elektro,Kabelrinnen/Zubehör,Stück,2,20.0,10.0
+KO,Konstruktion,Treppenelemente,Stück,1,20.0,20.0
+EL,Elektro,Trassen,m,2,20.0,10.0
+SPR,Sprinkler,Fenster,Stück,2,20.0,10.0
+INT,Ausbau,Unterkonstruktion,m²,4,20.0,5.0
+INT,Ausbau,Fugenband,m,4,20.0,5.0
+SPR,Sprinkler,Zuleitungen,m,3,19.0,5.0
+TRANS,Transport,USV-Anlage,Stück,4,19.0,5.0
+TRANS,Transport,Batterieschrank/Batteriemodul,Stück,4,19.0,5.0
+AUTO,Automation,field devices,Stück,3,16.0,5.0
+HZ,Heizung,Halterungen,Stück,3,16.0,5.0
+SPR,Sprinkler,Sonnenschutzelemente,Stück,1,16.0,16.0
+SN,Sanitär,sanitary bracket,Stück,3,16.0,5.0
+EL,Elektro,Verteilungen,Stück,3,16.0,5.0
+KT,Kälte,Kälteanlage,Stück,3,16.0,5.0
+KT,Kälte,Komponenten,Stück,3,16.0,5.0
+KT,Kälte,Montagekonsolen,Stück,3,16.0,5.0
+AUTO,Automation,valves,Stück,3,16.0,5.0
+AUTO,Automation,actuators,Stück,3,16.0,5.0
+KT,Kälte,Kältemittelleitung,m,3,16.0,5.0
+KT,Kälte,Kälterohrhalter,Stück,3,16.0,5.0
+EL,Elektro,Halterungen,Stück,3,16.0,5.0
+KO,Konstruktion,Stahlbauteile,Stück,3,15.0,5.0
+OTH,Sonstige,Putzlappen,Stück,3,15.0,5.0
+INT,Ausbau,Stützen-Unterkonstruktion,Stück,3,15.0,5.0
+SN,Sanitär,Montagehalterung Kälte,Stück,3,15.0,5.0
+OTH,Sonstige,Fangstangen,Stück,3,15.0,5.0
+OTH,Sonstige,Reinigungsmittel,kg,3,15.0,5.0
+EL,Elektro,fiber optic cables,m,3,15.0,5.0
+EL,Elektro,equipotential bonding materials,m,3,15.0,5.0
+EL,Elektro,distribution boxes,Stück,3,15.0,5.0
+EL,Elektro,transformer,Stück,3,15.0,5.0
+INT,Ausbau,Brandschutzplatten,Stück,3,15.0,5.0
+HZ,Heizung,Kälterohrleitungen,m,3,15.0,5.0
+AUTO,Automation,Regler,Stück,3,15.0,5.0
+HZ,Heizung,Prüfmedium Wasser,m³,3,15.0,5.0
+HZ,Heizung,Prüfgas Druckluft/Inertgas,m³,3,15.0,5.0
+SN,Sanitär,Sanitär-Halterungen,Stück,3,15.0,5.0
+ENV,Gebäudehülle,Fassadenblech,m²,2,15.0,7.5
+AUTO,Automation,Sensoren,Stück,3,15.0,5.0
+AUTO,Automation,Schaltschränke,Stück,3,15.0,5.0
+HZ,Heizung,Rohrdämmung,m,3,15.0,5.0
+SPR,Sprinkler,Gaslösch-Leitung,m,3,15.0,5.0
+OTH,Sonstige,Stützrohre/Träger,Stück,3,15.0,5.0
+OTH,Sonstige,Staubsaugerbeutel,Stück,3,15.0,5.0
+INT,Ausbau,Manschetten,Stück,3,15.0,5.0
+ENV,Gebäudehülle,Außentüren,Stück,3,15.0,5.0
+KO,Konstruktion,Gitterrost,Stück,3,15.0,5.0
+KO,Konstruktion,Stahlbaubühne,Stück,3,15.0,5.0
+EL,Elektro,Potenzialausgleichsleiter,m,3,15.0,5.0
+KT,Kälte,Outdoor unit,Stück,3,15.0,5.0
+KT,Kälte,Insulation,m,3,15.0,5.0
+KT,Kälte,Kältedämmung,m²,3,15.0,5.0
+KO,Konstruktion,Stahlträger,Stück,3,15.0,5.0
+EL,Elektro,Mock-up components,Stück,1,15.0,15.0
+EL,Elektro,Netzwerk-/Verteilschränke,Stück,3,15.0,5.0
+EL,Elektro,Verteiler,Stück,3,15.0,5.0
+KO,Konstruktion,Befestigungsteile / Gitterrostklemmen,Satz,3,15.0,5.0
+EL,Elektro,Türen,Stück,3,15.0,5.0
+EL,Elektro,Türzargen,Stück,3,15.0,5.0
+KT,Kälte,Dämmplatten/Isoliermaterial,m²,3,15.0,5.0
+KT,Kälte,Dampfsperre/Schutzmantel,m²,3,15.0,5.0
+KT,Kälte,Copper refrigerant piping,m,3,15.0,5.0
+EL,Elektro,Schalter,Stück,3,15.0,5.0
+EL,Elektro,Seilabhängungen für Leuchten,Stück,3,15.0,5.0
+EL,Elektro,Installationsrohr/Leerrohr,m,2,15.0,7.5
+EL,Elektro,Kabel (Schwachstrom/LWL),m,2,15.0,7.5
+KT,Kälte,Refrigeration equipment,Stück,3,15.0,5.0
+KT,Kälte,Puffertank,Stück,3,15.0,5.0
+EL,Elektro,IT-Schränke,Stück,3,15.0,5.0
+EL,Elektro,LWL-Komponenten,Stück,3,15.0,5.0
+EL,Elektro,LV switchboard,Stück,3,15.0,5.0
+EL,Elektro,Kupfer-IT-Kabel,m,3,15.0,5.0
+EL,Elektro,Innentüren,Stück,3,15.0,5.0
+EL,Elektro,Fangleitung,m,3,15.0,5.0
+EL,Elektro,Fangseil,m,3,15.0,5.0
+TRANS,Transport,Gitterrost,Stück,3,15.0,5.0
+TRANS,Transport,Ankerbolzen Stück,Vergussmörtel kg,3,15.0,5.0
+TRANS,Transport,Beton m³,Bewehrung kg,3,15.0,5.0
+AUTO,Automation,Aktoren,Stück,3,15.0,5.0
+AUTO,Automation,IT-Schwerlastschränke,Stück,3,15.0,5.0
+AUTO,Automation,MSR control cabinet,Stück,3,14.0,5.0
+LF,Lüftung,CRAH unit,Stück,3,14.0,5.0
+LF,Lüftung,CRAH-Lüftungsgerät,Stück,3,14.0,5.0
+INT,Ausbau,Epoxy coating material,kg,3,14.0,5.0
+SN,Sanitär,Dämmmatten / Formteile,m²,3,14.0,5.0
+SN,Sanitär,Rohrisolierung,m,3,14.0,5.0
+SN,Sanitär,Armaturenisolierung,Stück,3,14.0,5.0
+OTH,Sonstige,Reinigungsmaterial,Stück,3,14.0,5.0
+SPR,Sprinkler,Verteilerrohre,m,3,14.0,5.0
+EL,Elektro,BMA cables,m,3,14.0,5.0
+EL,Elektro,RJ45 patch cables,Stück,3,14.0,5.0
+EL,Elektro,RAS unit,Stück,3,14.0,5.0
+AUTO,Automation,tray supports,Stück,3,14.0,5.0
+SPR,Sprinkler,Düsen,Stück,3,14.0,5.0
+EL,Elektro,side suspension sets,Stück,3,14.0,5.0
+SN,Sanitär,Sanitärkeramik,Stück,3,14.0,5.0
+EL,Elektro,Punktmelder-Kabel,m,3,14.0,5.0
+EL,Elektro,Brandmeldekabel J-Y(St)Y,m,3,14.0,5.0
+AUTO,Automation,cable tray,m,3,14.0,5.0
+EL,Elektro,Power supply unit,Stück,3,14.0,5.0
+EL,Elektro,Installationsmaterial,Stück,3,14.0,5.0
+INT,Ausbau,Metallprofile,lfm,2,10.0,5.0
+SN,Sanitär,> Druckprüfprotokoll,Manometer,2,10.0,5.0
+INT,Ausbau,Epoxy-Beschichtung,kg,2,10.0,5.0
+INT,Ausbau,Fugendeckstreifen,m,2,10.0,5.0
+INT,Ausbau,Fugenspachtel,kg,2,10.0,5.0
+INT,Ausbau,CD-/UD-Profile,m,2,10.0,5.0
+SPR,Sprinkler,Profilrahmen,Stück,1,10.0,10.0
+EL,Elektro,Rohr,m,2,10.0,5.0
+ENV,Gebäudehülle,Attikaabdeckungen aus Blech,m,1,10.0,10.0
+ENV,Gebäudehülle,Befestigungsmaterial,Stück,1,10.0,10.0
+ENV,Gebäudehülle,Blechfassadenelemente,Stück,1,10.0,10.0
+INT,Ausbau,Dämmmaterial,m²,2,10.0,5.0
+SN,Sanitär,Verteiler,Stück,1,10.0,10.0
+SN,Sanitär,Valves,Stück,1,10.0,10.0
+INT,Ausbau,Metallständerprofile,m,2,10.0,5.0
+INT,Ausbau,Grundierung,L,2,10.0,5.0
+LF,Lüftung,RLT-Gerät,Stück,2,10.0,5.0
+LF,Lüftung,Rundrohr,Stück,2,10.0,5.0
+INT,Ausbau,Unterkonstruktion,Stück,2,10.0,5.0
+KO,Konstruktion,Stahlbühne,Stück,1,10.0,10.0
+KT,Kälte,Armaturen,Stück,1,10.0,10.0
+KT,Kälte,Isolierung,m²,1,10.0,10.0
+TRANS,Transport,Batterien,Stück,2,10.0,5.0
+KT,Kälte,Stickstoff,m³,2,10.0,5.0
+KT,Kälte,Skids/Stahlkonstruktionen,Stück,1,10.0,10.0
+KT,Kälte,Prüfgas,m³,2,10.0,5.0
+LF,Lüftung,BSK / Brandschutzklappen,Stück,1,10.0,10.0
+TRANS,Transport,USV,Stück,2,10.0,5.0
+ENV,Gebäudehülle,Dämmstoff,m²,2,10.0,5.0
+EL,Elektro,Rohr/Leerrohr,m,1,10.0,10.0
+EL,Elektro,Rohre,m,2,10.0,5.0
+ENV,Gebäudehülle,Streckmetall-Elemente,Stück,1,10.0,10.0
+EL,Elektro,Hauptkabel,m,1,10.0,10.0
+ENV,Gebäudehülle,Fassadenelemente,Stück,2,10.0,5.0
+INT,Ausbau,Bewehrungsstreifen,m,2,10.0,5.0
+ENV,Gebäudehülle,Unterkonstruktion Metall,m,1,10.0,10.0
+ENV,Gebäudehülle,Unterkonstruktion,Stück,1,10.0,10.0
+SPR,Sprinkler,Glaselemente,m²,1,10.0,10.0
+SPR,Sprinkler,Dichtungen,m,1,10.0,10.0
+SN,Sanitär,Sanitary pipes,m,1,10.0,10.0
+ENV,Gebäudehülle,Klebespachtel,kg,1,10.0,10.0
+ENV,Gebäudehülle,Kantteile,m,1,10.0,10.0
+EL,Elektro,Gripple Drahtseilabhängungen für Leuchten,Stück,1,9.0,9.0
+INT,Ausbau,Epoxy coating set,kg,2,9.0,4.5
+KT,Kälte,CRAH-Kälteanlage,Stück,2,9.0,4.5
+KT,Kälte,Strangregulierventile,Stück,1,5.0,5.0
+TRANS,Transport,MS-Anlagen,Stück,1,5.0,5.0
+LF,Lüftung,Dämmmaterial,m²,1,5.0,5.0
+INT,Ausbau,Trennwände/Systemtrennwände,Stück,1,5.0,5.0
+INT,Ausbau,Trennwandelemente,Stück,1,5.0,5.0
+INT,Ausbau,Trennwandprofile,m,1,5.0,5.0
+INT,Ausbau,Warmgangeinhausung,Stück,1,5.0,5.0
+INT,Ausbau,Unterkonstruktion Doppelboden,Stück,1,5.0,5.0
+INT,Ausbau,Trennwände,m²,1,5.0,5.0
+LF,Lüftung,RLT-Lüftungsgerät,Stück,1,5.0,5.0
+INT,Ausbau,Systemtrennwände,m²,1,5.0,5.0
+INT,Ausbau,Strahlmittel,kg,1,5.0,5.0
+INT,Ausbau,Klimaspange-Trennwände,Stück,1,5.0,5.0
+INT,Ausbau,Trennwand-Systeme,Stück,1,5.0,5.0
+INT,Ausbau,Gipsplatten,m²,1,5.0,5.0
+INT,Ausbau,Epoxy coating materials,kg,1,5.0,5.0
+INT,Ausbau,Kugelstrahlmittel,kg,1,5.0,5.0
+INT,Ausbau,Epoxidbeschichtung,kg,1,5.0,5.0
+INT,Ausbau,Stelzlager/Pedestals,Stück,1,5.0,5.0
+ENV,Gebäudehülle,Unterkonstruktion,kg,1,5.0,5.0
+ENV,Gebäudehülle,Zementestrich,m³,1,5.0,5.0
+SPR,Sprinkler,Befestigungsmaterial,Packung,1,5.0,5.0
+HZ,Heizung,Fittings/Armaturen,Stück,1,5.0,5.0
+HZ,Heizung,Brandschutzklappen,Stück,1,5.0,5.0
+INT,Ausbau,Dämmung Mineralwolle,m²,1,5.0,5.0
+INT,Ausbau,Dämmstoff,m²,1,5.0,5.0
+INT,Ausbau,Dichtungsband,m,1,5.0,5.0
+INT,Ausbau,Dämmplatten,m²,1,5.0,5.0
+HZ,Heizung,Kältemaschine,Stück,1,5.0,5.0
+ENV,Gebäudehülle,Fenster,Stück,1,5.0,5.0
+ENV,Gebäudehülle,Blechfassadenelemente,m²,1,5.0,5.0
+SPR,Sprinkler,Fittings,Stück,1,5.0,5.0
+EL,Elektro,Leitungsmaterial,m,1,5.0,5.0
+EL,Elektro,Leerrohre / Schutzrohre,m,1,5.0,5.0
+SPR,Sprinkler,Löschmittel,kg,1,5.0,5.0
+ENV,Gebäudehülle,Facade materials,Stück,1,5.0,5.0
+SPR,Sprinkler,Löschmittelbehälter,Stück,1,5.0,5.0
+SPR,Sprinkler,Löschmittelzentrale,Stück,1,5.0,5.0
+EL,Elektro,Befestigungsmaterial,Stück,1,5.0,5.0
+EL,Elektro,Blitzschutz-Fangstangen,Stück,1,5.0,5.0
+EL,Elektro,Kabel / LWL / Datenkabel,m,1,5.0,5.0
+EL,Elektro,Erdungsleiter,m,1,5.0,5.0
+SPR,Sprinkler,Sonnenschutzsysteme,Stück,1,5.0,5.0
+EL,Elektro,Ableitungen,Stück,1,5.0,5.0
+AUTO,Automation,Field devices,Stück,1,5.0,5.0
+AUTO,Automation,Connection materials,Stück,1,5.0,5.0

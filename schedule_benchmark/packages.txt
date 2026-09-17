@@ -1,0 +1,2 @@
+# Streamlit Community Cloud reads this file for the Python version.
+python-3.11
