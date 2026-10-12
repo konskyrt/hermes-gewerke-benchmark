@@ -129,38 +129,24 @@ def base_layout(fig: go.Figure, title: str, n_rows: float, legend: bool = True) 
 
 
 # ---------------------------------------------------------------------------
-# Sidebar
+# Project sizes (no sidebar: known sizes from the analytics config, the rest
+# assumed and marked * in the charts)
 # ---------------------------------------------------------------------------
 
-st.sidebar.title("Gewerk Comparison")
-categories = sorted(GEWERKE["category"].unique())
-category = st.sidebar.radio("Category", ["All"] + categories, index=0)
-query = st.sidebar.text_input("Find Gewerk", placeholder="e.g. Elektro")
-min_sched = st.sidebar.slider("In at least N schedules", 1, N_PROJ, 2)
-sort_by = st.sidebar.selectbox("Sort cards by",
-                               ["Schedules covered", "Tasks", "Material per m²", "Name"])
+# Hide the sidebar and its toggle entirely - the page is the cards only.
+st.markdown("<style>[data-testid='stSidebar'], [data-testid='stSidebarCollapsedControl'],"
+            " [data-testid='collapsedControl'] {display: none;}</style>",
+            unsafe_allow_html=True)
 
-st.sidebar.markdown("---")
-st.sidebar.subheader("Project size")
-st.sidebar.caption("Volumes need each schedule's BGF. Blank rows use the assumed "
-                   "size and are marked * in the charts.")
-assumed_bgf = st.sidebar.number_input("Assumed BGF (m²)", 1000, 500000, 15000, 1000)
-assumed_storeys = st.sidebar.number_input("Assumed storeys", 1, 80, 6)
+ASSUMED_BGF, ASSUMED_STOREYS = 15000.0, 6.0
 known = D["meta"].get("project_size", {})
-size_df = st.sidebar.data_editor(
-    pd.DataFrame({"Schedule": PROJECTS,
-                  "BGF m²": [known.get(p, {}).get("bgf_m2") for p in PROJECTS],
-                  "Storeys": [known.get(p, {}).get("geschosse") for p in PROJECTS]}),
-    hide_index=True, disabled=["Schedule"], key="sizes",
-    column_config={"BGF m²": st.column_config.NumberColumn(min_value=0, step=500),
-                   "Storeys": st.column_config.NumberColumn(min_value=1, step=1)})
 SIZES = {}
-for _, r in size_df.iterrows():
-    given = pd.notna(r["BGF m²"]) and r["BGF m²"] > 0
-    SIZES[r["Schedule"]] = dict(
-        bgf=float(r["BGF m²"]) if given else float(assumed_bgf),
-        storeys=float(r["Storeys"]) if pd.notna(r["Storeys"]) else float(assumed_storeys),
-        assumed=not given)
+for p in PROJECTS:
+    k = known.get(p, {})
+    given = bool(k.get("bgf_m2"))
+    SIZES[p] = dict(bgf=float(k["bgf_m2"]) if given else ASSUMED_BGF,
+                    storeys=float(k.get("geschosse") or ASSUMED_STOREYS),
+                    assumed=not given)
 
 
 def ylabel(p: str) -> str:
@@ -199,58 +185,55 @@ def gewerk_frame(g: str) -> dict:
 # Charts - each one compares the schedules of a single Gewerk
 # ---------------------------------------------------------------------------
 
-def chart_phases(x: dict) -> go.Figure:
-    """When the trade runs in each schedule, split by phase (% of schedule)."""
-    fig = go.Figure()
-    ys = x["scheds"][::-1]
-    for i, _ in enumerate(ys):
-        fig.add_shape(type="rect", xref="x", yref="y", layer="below", x0=0, x1=100,
-                      y0=i - 0.46, y1=i + 0.46, fillcolor="rgba(137,135,129,0.10)", line_width=0)
-    gpp = x["gpp"]
-    for ph in phase_sorted(gpp.phase.unique()):
-        r = gpp[gpp.phase == ph].set_index("project_label").reindex(ys).dropna(subset=["rel_start"])
-        fig.add_trace(go.Bar(
-            y=r.index, x=(r.rel_end - r.rel_start) * 100, base=r.rel_start * 100,
-            orientation="h", name=ph,
-            marker=dict(color=PHASE_COLORS.get(ph, MUTED), cornerradius=3),
-            customdata=np.stack([r.n_tasks, r.active_weeks, r.rel_start * 100,
-                                 r.rel_end * 100], axis=1),
-            hovertemplate=(f"<b>%{{y}}</b> · {ph}<br>%{{customdata[2]:.0f}}–"
-                           "%{customdata[3]:.0f}% of schedule<br>%{customdata[0]:.0f} tasks · "
-                           "%{customdata[1]:.0f} active wk<extra></extra>")))
-    base_layout(fig, "Phases - position in each schedule (%)", legend=False, n_rows=
-                len(ys) * max(1, gpp.phase.nunique()) / 1.5)
-    fig.update_layout(barmode="group", bargroupgap=0.05)
-    fig.update_xaxes(range=[0, 100], ticksuffix="%")
-    fig.update_yaxes(categoryorder="array", categoryarray=ys)
+def big_layout(fig: go.Figure, title: str, subtitle: str, xtitle: str, ytitle: str) -> go.Figure:
+    """Full-width chart: large title, project legend underneath, axis titles."""
+    fig.update_layout(
+        title=dict(text=f"{title}<br><span style='font-size:13px;color:{MUTED}'>{subtitle}</span>",
+                   x=0, xanchor="left", font=dict(size=22)),
+        height=520, margin=dict(l=10, r=10, t=90, b=10),
+        legend=dict(orientation="h", yanchor="top", y=-0.16, x=0, title=dict(text="Project  "),
+                    font=dict(size=13), traceorder="normal"),
+        hoverlabel=dict(namelength=-1))
+    fig.update_xaxes(title=dict(text=xtitle, font=dict(size=14)), showgrid=False, zeroline=False)
+    fig.update_yaxes(title=dict(text=ytitle, font=dict(size=14)), showgrid=True, gridcolor=GRID,
+                     zeroline=False, rangemode="tozero")
     return fig
 
 
-def chart_durations(x: dict) -> go.Figure:
-    """Active weeks per phase, stacked, per schedule; total labelled."""
-    fig = go.Figure()
-    ys = x["scheds"][::-1]
+PHASE_MEASURES = ["Duration (active weeks)", "When (% of schedule)", "Tasks"]
+
+
+def chart_phase_compare(x: dict, measure: str) -> go.Figure:
+    """Phases on the x axis, one bar per project inside each phase."""
     gpp = x["gpp"]
-    for ph in phase_sorted(gpp.phase.unique()):
-        r = gpp[gpp.phase == ph].set_index("project_label").reindex(ys)
-        fig.add_trace(go.Bar(
-            y=ys, x=r.active_weeks.fillna(0), orientation="h", name=ph,
-            marker=dict(color=PHASE_COLORS.get(ph, MUTED),
-                        line=dict(color="rgba(255,255,255,0.9)", width=1.5)),
-            customdata=r.n_tasks.fillna(0),
-            hovertemplate=(f"<b>%{{y}}</b> · {ph}<br>%{{x:.0f}} active weeks · "
-                           "%{customdata:.0f} tasks<extra></extra>")))
-    # Phases can overlap in time, so the stack is phase-weeks, not calendar
-    # weeks; label both so the end of the bar and the number agree.
-    stack = gpp.groupby("project_label").active_weeks.sum().reindex(ys)
-    union = x["gp"].reindex(ys).active_weeks
-    fig.add_trace(go.Scatter(
-        y=ys, x=stack, mode="text", textposition="middle right", showlegend=False,
-        text=[f"  Σ {s:.0f} · {u:.0f} on site" for s, u in zip(stack, union)],
-        textfont=dict(size=11), hoverinfo="skip"))
-    base_layout(fig, "Duration - active weeks by phase", len(ys), legend=False)
-    fig.update_layout(barmode="stack")
-    fig.update_xaxes(range=[0, stack.max() * 1.45])
+    phases = phase_sorted(gpp.phase.unique())
+    kind = measure.split()[0]
+    fig = go.Figure()
+    for p in x["scheds"]:
+        r = gpp[gpp.project_label == p].set_index("phase").reindex(phases)
+        if r.n_tasks.isna().all():
+            continue
+        custom = np.stack([r.n_tasks.fillna(0), r.active_weeks, r.rel_start * 100,
+                           r.rel_end * 100], axis=1)
+        hover = (f"<b>{p}</b> · %{{x}}<br>%{{customdata[1]:.0f}} active weeks · "
+                 "%{customdata[0]:.0f} tasks<br>%{customdata[2]:.0f}–%{customdata[3]:.0f}% "
+                 "of schedule<extra></extra>")
+        common = dict(x=phases, name=p, customdata=custom, hovertemplate=hover,
+                      marker=dict(color=PROJECT_COLORS.get(p, MUTED), cornerradius=3))
+        if kind == "When":
+            fig.add_trace(go.Bar(y=(r.rel_end - r.rel_start) * 100, base=r.rel_start * 100, **common))
+        else:
+            vals = r.active_weeks if kind == "Duration" else r.n_tasks
+            fig.add_trace(go.Bar(y=vals, text=[fmt(v) if pd.notna(v) else "" for v in vals],
+                                 textposition="outside", textfont=dict(size=11), **common))
+    ytitle = {"Duration": "active weeks", "When": "% of schedule window", "Tasks": "tasks"}[kind]
+    sub = {"Duration": "Weeks with at least one task of the phase running, per project",
+           "When": "Each bar spans the phase's first start to last finish within the project's schedule",
+           "Tasks": "Number of scheduled tasks per phase and project"}[kind]
+    big_layout(fig, "Phases by project", sub, "phase (in build order)", ytitle)
+    fig.update_layout(barmode="group", bargap=0.18, bargroupgap=0.04)
+    if kind == "When":
+        fig.update_yaxes(range=[0, 100], ticksuffix="%")
     return fig
 
 
@@ -333,7 +316,7 @@ def weekly_profile() -> pd.DataFrame:
     p_len = (prof["project_label"].map(frame["finish"]) - p_start).dt.days.clip(lower=1)
     mid = prof["g0"] + pd.to_timedelta(prof["week"] * 7 + 3.5, unit="D")
     prof["pct"] = (mid - p_start).dt.days / p_len * 100
-    return prof.drop(columns=["w", "g0"])
+    return prof.drop(columns=["w"])
 
 
 # One fixed colour per schedule (categorical palette, schedule order = start
@@ -342,12 +325,19 @@ PROJECT_COLORS = dict(zip(PROJECTS, ["#2a78d6", "#eb6834", "#1baf7a", "#eda100",
                                      "#e87ba4", "#008300", "#4a3aa7", "#e34948"]))
 
 
+FLOW_METRICS = {"m³ per week": ("m³ per week", "m³/wk"), "LKW per week": ("trucks per week", "LKW/wk"),
+                "m² BGF per week": ("m² BGF per week", "m²/wk"), "Cumulative %": ("cumulative % done", "%")}
+FLOW_AXES = ["Weeks from Gewerk start", "Calendar date", "% of schedule"]
+
+
 def chart_over_time(x: dict, g: str, metric: str, axis: str) -> go.Figure:
-    """One line per schedule: how the Gewerk's work is distributed over time."""
+    """One line per project: how the Gewerk's work flows over time."""
     prof = weekly_profile()
     prof = prof[prof.gewerk_label == g]
     v = x["vol"]
     eff_load = (x["load_m3"] or np.nan) * ga.LKW_UTILIZATION
+    ytitle, unit = FLOW_METRICS[metric]
+    kind = axis.split()[0]
     fig = go.Figure()
     for p in x["scheds"]:
         r = prof[prof.project_label == p].sort_values("week")
@@ -355,37 +345,40 @@ def chart_over_time(x: dict, g: str, metric: str, axis: str) -> go.Figure:
             continue
         # Fill gap weeks with zero, then a centred 4-week mean so schedules with
         # many short tasks stay comparable with ones planned in long blocks.
+        g0 = r.g0.iloc[0]
         weeks = np.arange(r.week.min(), r.week.max() + 1)
         r = (r.set_index("week").reindex(weeks)
              .assign(share=lambda d: d.share.fillna(0), pct=lambda d: d.pct.interpolate())
              .reset_index().rename(columns={"index": "week"}))
+        r["date"] = g0 + pd.to_timedelta(r.week * 7, unit="D")
         if metric != "Cumulative %":
             r["share"] = r.share.rolling(4, center=True, min_periods=1).mean()
         if metric == "m³ per week":
-            y, unit = r.share * v.loc[p, "high"], "m³/wk"
+            y = r.share * v.loc[p, "high"]
         elif metric == "LKW per week":
-            y, unit = r.share * v.loc[p, "high"] / eff_load, "LKW/wk"
+            y = r.share * v.loc[p, "high"] / eff_load
         elif metric == "m² BGF per week":
-            y, unit = r.share * SIZES[p]["bgf"], "m²/wk"
+            y = r.share * SIZES[p]["bgf"]
         else:
-            y, unit = r.share.cumsum() * 100, "% done"
-        xs = r.week if axis.startswith("Weeks") else r.pct
+            y = r.share.cumsum() * 100
+        xs = {"Weeks": r.week, "Calendar": r.date, "%": r.pct}[kind]
+        xfmt = {"Weeks": "week %{x:.0f}", "Calendar": "%{x|%d %b %Y}",
+                "%": "%{x:.0f}% of schedule"}[kind]
         fig.add_trace(go.Scatter(
             x=xs, y=y, mode="lines", name=ylabel(p),
-            line=dict(color=PROJECT_COLORS.get(p, MUTED), width=2),
-            hovertemplate=(f"<b>{p}</b><br>{'week %{x:.0f}' if axis.startswith('Weeks') else '%{x:.0f}% of schedule'}"
-                           f"<br>%{{y:,.1f}} {unit}<extra></extra>")))
-    title = f"Over time - {metric}"
-    if metric != "Cumulative %":
-        title += ", 4-week mean"
+            line=dict(color=PROJECT_COLORS.get(p, MUTED), width=2.5),
+            hovertemplate=f"<b>{p}</b><br>{xfmt}<br>%{{y:,.1f}} {unit}<extra></extra>"))
+    sub = "4-week rolling mean" if metric != "Cumulative %" else "share of the Gewerk's work completed"
     if metric in ("m³ per week", "LKW per week"):
-        title += " (high case)"
-    base_layout(fig, title, 8)
-    fig.update_layout(hovermode="x unified" if axis.startswith("Weeks") else "closest")
-    fig.update_xaxes(rangemode="tozero",
-                     **({"range": [0, 100], "ticksuffix": "%"} if axis.startswith("%") else {}))
-    fig.update_yaxes(rangemode="tozero", showgrid=True, gridcolor=GRID,
-                     **({"range": [0, 102], "ticksuffix": "%"} if metric == "Cumulative %" else {}))
+        sub += " · high-intensity factors · * = assumed project size"
+    big_layout(fig, f"{g} - {ytitle} over time", sub,
+               {"Weeks": "weeks from Gewerk start", "Calendar": "date", "%": "% of schedule"}[kind],
+               ytitle)
+    fig.update_layout(hovermode="x unified" if kind == "Weeks" else "closest")
+    if kind == "%":
+        fig.update_xaxes(range=[0, 100], ticksuffix="%")
+    if metric == "Cumulative %":
+        fig.update_yaxes(range=[0, 102], ticksuffix="%")
     return fig
 
 
@@ -420,30 +413,32 @@ def render_card(g: str) -> None:
              f"observed median · {x['cg']}"),
         ]), unsafe_allow_html=True)
 
-        c1, c2 = st.columns(2)
-        c1.plotly_chart(chart_phases(x), key=f"ph-{g}", **STRETCH)
-        c2.plotly_chart(chart_durations(x), key=f"du-{g}", **STRETCH)
-        if has_factor:
-            c3, c4 = st.columns(2)
-            c3.plotly_chart(chart_volume(x), key=f"vo-{g}", **STRETCH)
-            c4.plotly_chart(chart_trucks(x), key=f"tr-{g}", **STRETCH)
-            note = (f"Volume = BuildSync material factors × schedule BGF (* = assumed size). Trucks = volume ÷ "
-                    f"({x['veh']}, {fmt(x['load_m3'])} m³ × {ga.LKW_UTILIZATION:.0%}) ÷ active weeks. "
-                    f"⏱ rows: observed deliveries of the whole {x['cg']} group on historical projects.")
-            if bool(f["uses_unit_driver"]):
-                note += " Count-based drivers (lifts, doors, kitchens) scale linearly - indicative only."
-            st.caption(note)
-        else:
-            st.caption("No material factor for this Gewerk in the BuildSync factor sheet "
-                       "(deliberately zero there to avoid double counting).")
+        measure = st.radio("Phase chart shows", PHASE_MEASURES, horizontal=True, key=f"pm-{g}")
+        st.plotly_chart(chart_phase_compare(x, measure), key=f"pc-{g}", **STRETCH)
 
         metrics = (["m³ per week", "LKW per week"] if has_factor else []) + \
                   ["m² BGF per week", "Cumulative %"]
         k1, k2 = st.columns([3, 2])
-        metric = k1.radio("Over time", metrics, horizontal=True, key=f"tm-{g}")
-        axis = k2.radio("X axis", ["Weeks from Gewerk start", "% of schedule"],
-                        horizontal=True, key=f"ta-{g}")
+        metric = k1.radio("Flow chart shows", metrics, horizontal=True, key=f"tm-{g}")
+        axis = k2.radio("X axis", FLOW_AXES, horizontal=True, key=f"ta-{g}")
         st.plotly_chart(chart_over_time(x, g, metric, axis), key=f"ot-{g}", **STRETCH)
+
+        if has_factor:
+            with st.expander("More: total volume and trucks vs historical projects"):
+                c3, c4 = st.columns(2)
+                c3.plotly_chart(chart_volume(x), key=f"vo-{g}", **STRETCH)
+                c4.plotly_chart(chart_trucks(x), key=f"tr-{g}", **STRETCH)
+                note = (f"Volume = BuildSync material factors × schedule BGF (* = assumed size). "
+                        f"Trucks = volume ÷ ({x['veh']}, {fmt(x['load_m3'])} m³ × "
+                        f"{ga.LKW_UTILIZATION:.0%}) ÷ active weeks. ⏱ rows: observed deliveries of "
+                        f"the whole {x['cg']} group on historical projects.")
+                if bool(f["uses_unit_driver"]):
+                    note += " Count-based drivers (lifts, doors, kitchens) scale linearly - indicative only."
+                st.caption(note)
+        else:
+            st.caption("No material factor for this Gewerk in the BuildSync factor sheet "
+                       "(deliberately zero there to avoid double counting), so the flow chart "
+                       "shows area and progress only.")
 
         with st.expander("Tasks and material components"):
             t1, t2 = st.tabs(["Tasks", "Material components"])
@@ -468,27 +463,15 @@ st.caption(
     "per week that implies, next to observed deliveries on historical projects. "
     f"Factors: {D['meta'].get('status', '')}.")
 
-sel = GEWERKE[GEWERKE.n_proj >= min_sched]
-if category != "All":
-    sel = sel[sel.category == category]
-if query:
-    sel = sel[sel.index.str.contains(query, case=False, regex=False)]
-sel = sel.assign(m2=[FACT.loc[g, "high_total_m3_per_m2"] if g in FACT.index else 0
-                     for g in sel.index])
-if sort_by == "Name":
-    sel = sel.sort_index()
-else:
-    cols = {"Schedules covered": ["n_proj", "n_tasks"], "Tasks": ["n_tasks"],
-            "Material per m²": ["m2"]}[sort_by]
-    sel = sel.sort_values(cols, ascending=False)
+# All Gewerke, the ones found in the most schedules first.
+sel = GEWERKE.sort_values(["n_proj", "n_tasks"], ascending=False)
 
-legend = " &nbsp; ".join(f"<span style='color:{PHASE_COLORS[p]}'>■</span> {p}"
-                         for p in ga.PHASE_ORDER)
-st.markdown(f"<div style='font-size:0.85rem'>Phase colours: {legend}</div>",
+legend = " &nbsp; ".join(f"<span style='color:{PROJECT_COLORS[p]}'>■</span> {ylabel(p)}"
+                         for p in PROJECTS)
+st.markdown(f"<div style='font-size:0.9rem'>Project colours (same in every chart): {legend}"
+            f"<br><span style='color:{MUTED}'>* project size not known - volumes assume "
+            f"{ASSUMED_BGF:,.0f} m² BGF</span></div>".replace(",", "'"),
             unsafe_allow_html=True)
-
-if sel.empty:
-    st.info("No Gewerk matches the filters.")
 
 # Five charts per card; paging keeps the browser from drawing ~200 at once.
 PER_PAGE = 5

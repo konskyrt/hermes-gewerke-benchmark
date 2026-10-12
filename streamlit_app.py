@@ -1,16 +1,13 @@
 """BuildSync Gewerke-Benchmark - Streamlit Community Cloud entry point.
 
-Two pages: the Gewerk cards (default) compare every schedule containing a
-Gewerk - phases, durations, material volume and trucks over time; the schedule
-benchmark is the cross-schedule duration dashboard in schedule_benchmark/.
+One page: a card per Gewerk comparing every schedule that contains it -
+phases by project and the Gewerk's flow over time (m³, LKW, m², progress).
 """
 
 from __future__ import annotations
 
-import streamlit as st
+import runpy
+from pathlib import Path
 
-pg = st.navigation([
-    st.Page("app_pages/gewerk_comparison.py", title="Gewerk cards", icon="🏗️", default=True),
-    st.Page("schedule_benchmark/dashboard/app.py", title="Schedule benchmark", icon="📊"),
-])
-pg.run()
+runpy.run_path(str(Path(__file__).resolve().parent / "app_pages" / "gewerk_comparison.py"),
+               run_name="__main__")
