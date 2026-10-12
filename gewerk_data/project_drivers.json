@@ -1,0 +1,208 @@
+{
+  "project_drivers": {
+    "floor_m2": {
+      "unit": "m²",
+      "description": "Gross treated floor area",
+      "example_quantity": 1000,
+      "note": "Floor gross area; reference 1,000 m² building"
+    },
+    "wall_m2": {
+      "unit": "m²",
+      "description": "Net paintable wall surfaces",
+      "example_quantity": 2200,
+      "note": "Both faces measured if both receive paint; subtract openings"
+    },
+    "ceiling_m2": {
+      "unit": "m²",
+      "description": "Net ceiling area",
+      "example_quantity": 1000,
+      "note": "Painted / suspended ceiling surfaces"
+    },
+    "partition_m2": {
+      "unit": "m²",
+      "description": "One-face partition wall area",
+      "example_quantity": 700,
+      "note": "For double-sided plasterboard set number of layers accordingly"
+    },
+    "shell_wall_m2": {
+      "unit": "m²",
+      "description": "Shell / masonry wall elevation",
+      "example_quantity": 650,
+      "note": "Structural concrete or masonry wall zone"
+    },
+    "facade_m2": {
+      "unit": "m²",
+      "description": "External façade treated elevation",
+      "example_quantity": 900,
+      "note": "Gross façade less non-treated glazing/openings"
+    },
+    "roof_m2": {
+      "unit": "m²",
+      "description": "Roof working area",
+      "example_quantity": 450,
+      "note": "Net roof covering area"
+    },
+    "window_m2": {
+      "unit": "m²",
+      "description": "External glazing/window openings",
+      "example_quantity": 130,
+      "note": "Window assembly area"
+    },
+    "floor_finish_m2": {
+      "unit": "m²",
+      "description": "Net floor finish area",
+      "example_quantity": 850,
+      "note": "Exclude equipment bases/voids as relevant"
+    },
+    "wet_wall_m2": {
+      "unit": "m²",
+      "description": "Tiled wet wall area",
+      "example_quantity": 110,
+      "note": "Wall tile area in wet rooms"
+    },
+    "site_m2": {
+      "unit": "m²",
+      "description": "Site / landscaping area",
+      "example_quantity": 600,
+      "note": "External works extent"
+    },
+    "excavation_m3": {
+      "unit": "m³",
+      "description": "Excavation in-situ volume",
+      "example_quantity": 1500,
+      "note": "Earthwork material outbound; bulking set per component"
+    },
+    "space_m3": {
+      "unit": "m³",
+      "description": "Served enclosed volume",
+      "example_quantity": 3000,
+      "note": "Fallback for systems without measured distribution routes"
+    },
+    "scaffold_m2": {
+      "unit": "m²",
+      "description": "Façade served by scaffolding",
+      "example_quantity": 900,
+      "note": "Temporary equipment, not permanent material"
+    },
+    "glazed_partition_m2": {
+      "unit": "m²",
+      "description": "Internal glass partition area",
+      "example_quantity": 80,
+      "note": "Exclude exterior window glazing"
+    },
+    "metalwork_length_m": {
+      "unit": "m",
+      "description": "Railings/handrails length",
+      "example_quantity": 140,
+      "note": "Measure from plan or metalwork quantities"
+    },
+    "door_units": {
+      "unit": "No.",
+      "description": "Door leaf sets",
+      "example_quantity": 45,
+      "note": "Count door assemblies from BIM"
+    },
+    "gate_units": {
+      "unit": "No.",
+      "description": "Large door/gates",
+      "example_quantity": 2,
+      "note": "Count distinct gates"
+    },
+    "lift_units": {
+      "unit": "No.",
+      "description": "Elevators / Aufzüge",
+      "example_quantity": 2,
+      "note": "Count lifts; number of stops/spec may strongly change factor"
+    },
+    "escalator_units": {
+      "unit": "No.",
+      "description": "Escalators / Fahrtreppen",
+      "example_quantity": 1,
+      "note": "Count separately from elevators"
+    },
+    "kitchen_units": {
+      "unit": "No.",
+      "description": "Kitchen units/sets",
+      "example_quantity": 10,
+      "note": "Count full kitchen sets rather than cabinets"
+    },
+    "medical_units": {
+      "unit": "No.",
+      "description": "Medical equipment stations",
+      "example_quantity": 5,
+      "note": "Actual equipment inventory preferred"
+    },
+    "wetroom_units": {
+      "unit": "No.",
+      "description": "Prefabricated wet room pods",
+      "example_quantity": 15,
+      "note": "Gross envelope volume for transport"
+    },
+    "mep_area_m2": {
+      "unit": "m²",
+      "description": "MEP-served floor area",
+      "example_quantity": 1000,
+      "note": "Fallback only; use counted element lengths/components where available"
+    }
+  },
+  "status": "Illustrative planning assumptions — NOT calibrated from historical quantities",
+  "warnings": [
+    "Original schedules contain tasks and labels, not material takeoff quantities; scenario ranges are proposed, not statistically fitted.",
+    "Duct and pipe envelopes include air/voids; do not interpret as solid material volume.",
+    "Project-level scaling also scales unit counts in the illustration, not suitable for actual equipment procurement.",
+    "Component factors may overlap by scope; TGA/HLKS remains zero, Betonbau is disabled unless independently allocated.",
+    "High factors have not been validated against actual BOQs, subcontractor estimates, or IFC QTO."
+  ],
+  "project_size": {
+    "BäreTower": {
+      "bgf_m2": 24804,
+      "geschosse": 33,
+      "source": "historical project_meta (ERA)"
+    }
+  },
+  "excluded_projects": [
+    "BF1"
+  ],
+  "vehicles": {
+    "Rohbau": [
+      "4-Achser",
+      22.0
+    ],
+    "Fassadenausbau": [
+      "LKW-Zug (geschlossen)",
+      23.9
+    ],
+    "Trockenbau": [
+      "LKW-Zug (geschlossen)",
+      23.9
+    ],
+    "Innenausbau": [
+      "Sprinter Extralang Hochdach (L4H3)",
+      17.0
+    ],
+    "Lüftungstechnik": [
+      "2-Achser",
+      9.6
+    ],
+    "Sanitär": [
+      "2-Achser",
+      9.6
+    ],
+    "Heizung": [
+      "2-Achser",
+      9.6
+    ],
+    "Elektroinstallation": [
+      "Sprinter Lang (L3H2)",
+      14.0
+    ],
+    "Sprinkleranlage": [
+      "2-Achser",
+      9.6
+    ],
+    "Gasanlagen": [
+      "Sprinter Standard (L2H2)",
+      11.0
+    ]
+  }
+}
